@@ -1,0 +1,15 @@
+[user]
+	name = kjwon15
+	email = kjwonmail@gmail.com
+[color]
+	ui = true
+[alias]
+	co = checkout
+	lg = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	df = diff -b --color-words
+	fix = commit --amend -C head
+	st = status -sb
+[push]
+	default = matching
+[core]
+	ignorecase = true

@@ -1,0 +1,74 @@
+"1.0rc1
+
+loadplugins '\.(js|penta)$'
+group user
+highlight Hint font: bold 20px "Source Code Pro", monospace !important; margin: -.2ex; padding: 0 0 0 1px; outline: 1px solid rgba(0, 0, 0, .5); background: rgba(255, 248, 231, .8) !important; color: black !important;
+map -count -modes=n j -builtin <count><C-d>
+map -count -modes=n k -builtin <count><C-u>
+"set autocomplete=
+set guioptions=brs
+set hintkeys=asdfg;lkjhweio
+set hintmatching=firstletters
+set scroll=5
+set showtabline=always
+set hinttags+=a:not([name])
+
+set nextpattern+='^다음'
+set previouspattern+='^이전'
+
+set editor='/usr/local/bin/mvim -f + +"sil! call cursor(0, 0)" '
+
+set passkeys+=mail.google.com:'`~!#*+-./<C-Down><C-s><Enter>?INU[]acefjklmnopqrsuvxyz',*a,*n,*r,*s,*t,*u,ga,gc,gd,gi,gl,gs,gt,yo
+set passkeys+=plus.google.com:jkonprl<Left><Right><Up><Down>
+set passkeys+=irccloud.com:<C-A-Up><C-A-Down><tab>
+set passkeys+="https?://kjwon15.ftp.sh/earthreader/":jkJKnpvroum
+"set passkeys+=*:<cr>
+
+set strictfocus=
+set strictfocus+=twitter.com:laissez-faire,'chrome:*':laissez-faire,*:moderate
+
+group googlesearth -locations="https?://(www\.)?google\.([^/]+)/([^/]*)"
+nmap -builtin gi 1gi
+group user
+
+group facebook -locations="https?://(www\.)?facebook\.com/(?!groups/|events/)"
+nmap -builtin j <pass>
+nmap -builtin k <pass>
+group user
+
+group twitter -locations="https?://twitter\.com/"
+map -builtin j <pass>
+map -builtin k <pass>
+map -builtin r <pass>
+map -builtin n <pass>
+map -builtin l <pass>
+map -builtin . <pass>
+map -builtin gr <pass>
+map -builtin gh <pass>
+map -builtin ga <pass>
+map -builtin gf <pass>
+map -builtin gn <pass>
+group user
+
+map \\ <leader>
+
+nmap -builtin <C-]> <C-v><esc>
+imap -builtin <C-]> <esc>
+tmap -builtin <C-]> <esc>
+
+imap -builtin <C-p> <esc><C-p>
+imap -builtin <C-n> <esc><C-n>
+
+imap -builtin <cr> <C-v><cr>
+imap -builtin <S-cr> <C-v><S-cr>
+imap -builtin <tab> <C-v><tab>
+
+nmap -ex <leader>t :set showtabline!=always,never
+
+js hints.addMode('h', "Echo title of element", function (elem) dactyl.echo(elem.title));
+se extendedhinttags+=[h]:[title]
+
+js hints.addMode('e', 'Focus input field', function(elem){dactyl.focus(elem);} );
+se extendedhinttags+=[e]:input:not([type=hidden]),textarea,button,[role=button],select,[contenteditable]
+
+" vim: set ft=vim:

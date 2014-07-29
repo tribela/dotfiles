@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/kjwon15/Dropbox/earthreader/feeds/5d8f24751dff91fd1a24f6edb566df21fe269306'
+let g:netrw_dirhist_2='/Users/kjwon15/Dropbox/earthreader/feeds/e8ad3079fd61bb0b235f7eb6aa3ff751652ad0cf'
+let g:netrw_dirhist_3='/Users/kjwon15/.pentadactyl'
+let g:netrw_dirhist_4='/Users/kjwon15/.gem'
+let g:netrw_dirhist_5='/Users/kjwon15/.gem/specs'
