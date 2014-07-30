@@ -81,6 +81,7 @@ else
   au FileType c set makeprg=gcc\ -o\ %<\ %
 endif
 au FileType python set makeprg=python\ -i\ %
+au FileType html set sw=2
 
 
 " set cursor to the last worked line
