@@ -7,7 +7,7 @@
 	co = checkout
 	lg = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	df = diff -b --color-words
-	fix = commit --amend -C head
+	fix = commit --amend -C HEAD
 	st = status -sb
 [push]
 	default = matching
