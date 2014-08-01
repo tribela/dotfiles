@@ -10,17 +10,6 @@ export LC_CTYPE='ko_KR.UTF-8'
 source ~/.profile
 
 
-
-#git completion
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
-
-#bash completion
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
-
 if which vcprompt; then
     export VCPROMPT_FORMAT='[0;34m<%b%m%u>[m'
     export PS1='\[\e[0;32m\]\u\[\e[m\]\[\e[39m\]@\[\e[36m\]\h:\[\e[33m\]\w\[\e[m\] $(vcprompt)\[\e[1;31m\]\$\[\e[m\] '
@@ -28,5 +17,3 @@ else
     export PS1='\[\e[0;32m\]\u\[\e[m\]\[\e[39m\]@\[\e[36m\]\h:\[\e[33m\]\w\[\e[m\]\[\e[1;31m\]\$\[\e[m\] '
 fi
 
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
