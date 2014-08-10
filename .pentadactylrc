@@ -21,7 +21,7 @@ set editor='/usr/local/bin/mvim -f + +"sil! call cursor(0, 0)" '
 set passkeys+=mail.google.com:'`~!#*+-./<C-Down><C-s><Enter>?INU[]acefjklmnopqrsuvxyz',*a,*n,*r,*s,*t,*u,ga,gc,gd,gi,gl,gs,gt,yo
 set passkeys+=plus.google.com:jkonprl<Left><Right><Up><Down>
 set passkeys+=irccloud.com:<C-A-Up><C-A-Down><tab>
-set passkeys+="https?://kjwon15.ftp.sh/earthreader/":jkJKnpvroum
+set passkeys+="https?://kjwon15.net/earthreader/":jkJKnpvroum
 "set passkeys+=*:<cr>
 
 set strictfocus=
@@ -31,9 +31,14 @@ group googlesearth -locations="https?://(www\.)?google\.([^/]+)/([^/]*)"
 nmap -builtin gi 1gi
 group user
 
+group github -locations="^https?://(www\.)?github\.com/"
+imap -builtin <cr> <C-v><cr>
+group user
+
 group facebook -locations="https?://(www\.)?facebook\.com/(?!groups/|events/)"
 nmap -builtin j <pass>
 nmap -builtin k <pass>
+imap <cr> <pass>
 group user
 
 group twitter -locations="https?://twitter\.com/"
@@ -59,7 +64,6 @@ tmap -builtin <C-]> <esc>
 imap -builtin <C-p> <esc><C-p>
 imap -builtin <C-n> <esc><C-n>
 
-imap -builtin <cr> <C-v><cr>
 imap -builtin <S-cr> <C-v><S-cr>
 imap -builtin <tab> <C-v><tab>
 
