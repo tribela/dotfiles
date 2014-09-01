@@ -10,6 +10,6 @@
 	fix = commit --amend -C HEAD
 	st = status -sb
 [push]
-	default = matching
+	default = simple
 [core]
 	ignorecase = true
