@@ -1,5 +1,6 @@
 color desert
 colo slate
+set nocompatible
 se nu
 se ru
 se sw=4
@@ -23,6 +24,18 @@ set ve=onemore "줄 끝까지 커서 이동 가능
 set modeline
 set modelines=5
 
+" Vundle
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'toggle'
+filetype plugin indent on
+
+
+
 set list
 set lcs=tab:↹\ ,trail:.,extends:>,precedes:<
 
@@ -34,7 +47,6 @@ set scrolloff=10
 
 set fencs=utf-8,cp949,euc-kr
 
-filetype plugin indent on
 
 map <C-S> :w<cr>
 imap <C-s> <esc>:w<cr>i
