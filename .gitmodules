@@ -1,3 +1,6 @@
 [submodule ".vim/bundle/vundle"]
 	path = .vim/bundle/vundle
 	url = https://github.com/gmarik/vundle.vim
+[submodule ".vim/bundle/toggle"]
+	path = .vim/bundle/toggle
+	url = https://github.com/vim-scripts/toggle
