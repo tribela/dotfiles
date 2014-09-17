@@ -5,6 +5,8 @@ alias ll='ls -l'
 alias lf='ls -F'
 alias gitk='gitk --all'
 
+mkcd() { mkdir -p "$1" && cd "$1"; }
+
 export LC_CTYPE='ko_KR.UTF-8'
 
 source ~/.profile
