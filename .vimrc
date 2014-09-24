@@ -42,6 +42,10 @@ set lcs=tab:↹\ ,trail:.,extends:>,precedes:<
 au filetype python set cc=80
 au filetype javascript set sw=2 sts=2
 
+"Spell check
+au filetype gitcommit setlocal spell
+autocmd BufRead,BufNewFile *.md,*.rst setlocal spell
+
 "Scroll before edge
 set scrolloff=10
 
