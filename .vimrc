@@ -120,6 +120,9 @@ endif
 " for gvim
 if has("gui_gnome")
   set guifont=Source\ Code\ Pro\ Semi-Bold:h12
+  nnoremap <C-S-v> "+gP
+  inoremap <C-S-v> <esc>"+gPi
+  vnoremap <C-c> "+y
 endif
 
 function! SuperTab()
