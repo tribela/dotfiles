@@ -79,7 +79,5 @@ export PATH="/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/Users/kjwon15
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if which vcprompt; then
-    export VCPROMPT_FORMAT='[0;34m<%b%m%u>[m'
-    export PS1='%{$fg[green]%}%n%{$fg_bold[white]%}@${fg_no_bold[cyan]%}%m%{$fg_bold[white]%}:%{$fg_no_bold[yellow]%}%~%{$reset_color%} $(vcprompt)%{$fg[red]%}%#%{$reset_color%} '
-fi
+export VCPROMPT_FORMAT='<%b%m%u> '
+export PS1='%{${fg[green]}%}%n%{${reset_color}%}@%{${fg[cyan]}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(vcprompt)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
