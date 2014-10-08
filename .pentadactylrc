@@ -11,6 +11,7 @@ set hintkeys=asdfg;lkjhweio
 set hintmatching=firstletters
 set scroll=5
 set showtabline=always
+set maxitems=5
 set hinttags+=a:not([name])
 
 set nextpattern+='^다음'
