@@ -32,6 +32,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'toggle'
+Bundle 'kbarrette/mediummode'
 filetype plugin indent on
 
 
