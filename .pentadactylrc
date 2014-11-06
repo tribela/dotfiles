@@ -39,6 +39,12 @@ group user
 group facebook -locations="https?://(www\.)?facebook\.com/(?!groups/|events/)"
 nmap -builtin j <pass>
 nmap -builtin k <pass>
+nmap -builtin p <pass>
+nmap -builtin l <pass>
+nmap -builtin c <pass>
+nmap -builtin s <pass>
+nmap -builtin o <pass>
+nmap -builtin <cr> <pass>
 imap <cr> <pass>
 group user
 
