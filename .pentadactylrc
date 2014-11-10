@@ -6,7 +6,7 @@ highlight Hint font: bold 20px "Source Code Pro", monospace !important; margin: 
 map -count -modes=n j -builtin <count><C-d>
 map -count -modes=n k -builtin <count><C-u>
 "set autocomplete=
-set guioptions=brs
+set guioptions=brsT
 set hintkeys=asdfg;lkjhweio
 set hintmatching=firstletters
 set scroll=5
