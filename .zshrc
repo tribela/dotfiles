@@ -51,7 +51,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/Users/kjwon15/.rvm/gems/ruby-1.9.3-p448/bin:/Users/kjwon15/.rvm/gems/ruby-1.9.3-p448@global/bin:/Users/kjwon15/.rvm/rubies/ruby-1.9.3-p448/bin:/Users/kjwon15/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/Users/kjwon15/bin:/Users/kjwon15/.local/bin:/Users/kjwon15/Library/Python/2.7/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
