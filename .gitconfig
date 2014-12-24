@@ -13,3 +13,7 @@
 	default = simple
 [core]
 	ignorecase = true
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
