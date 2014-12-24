@@ -86,10 +86,6 @@ nmap <space> i_<esc>r
 "indent all of files
 nmap <leader>g mzgg=G'z
 
-inoremap (<cr> (<cr>);<C-o>O
-inoremap {<cr> {<cr>}<C-o>O
-inoremap [<cr> [<cr>]<C-o>O
-inoremap ({<cr> ({<cr>})<C-o>O
 
 if filereadable('Makefile')
   au Filetype c set makeprg=make
@@ -124,12 +120,3 @@ if has("gui_gnome")
   inoremap <C-S-v> <esc>"+gPi
   vnoremap <C-c> "+y
 endif
-
-function! SuperTab()
-  if (strpart(getline('.'),col('.')-2,1)=~'^\W\?$')
-    return "\<Tab>"
-  else
-    return "\<C-n>"
-  endif
-endfunction
-inoremap <Tab> <C-r>=SuperTab()<cr>
