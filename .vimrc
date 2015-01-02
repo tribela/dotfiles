@@ -18,7 +18,7 @@ set incsearch " 순간검색
 set ignorecase
 set smartcase " 대문자로 검색하면 구분 함
 set noea "창을 나눌 때 똑같이 만들지 않음.
-"set mouse=a "마우스 사용 가능
+set mouse=a "마우스 사용 가능
 set autoread "외부에서 변경시 자동 읽기
 set ve=onemore "줄 끝까지 커서 이동 가능
 set modeline
