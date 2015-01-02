@@ -116,7 +116,4 @@ endif
 " for gvim
 if has("gui_gtk2")
   set guifont=Source\ Code\ Pro\ Semi-Bold\ 11
-  nnoremap <C-S-v> "+gP
-  inoremap <C-S-v> <esc>"+gPi
-  vnoremap <C-c> "+y
 endif
