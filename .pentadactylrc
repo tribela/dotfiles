@@ -78,6 +78,16 @@ imap -builtin <C-n> <esc><C-n>
 imap -builtin <S-cr> <C-v><S-cr>
 imap -builtin <tab> <C-v><tab>
 
+if config.OS.MacOSX
+    set editor='/usr/local/bin/mvim -f + +"sil! call cursor(0, 0)" '
+else
+    // Windows or Linux
+    dactyl.execute('map -count -modes=i,n <C-a> -builtin <pass>');
+    dactyl.execute('map -count -modes=i,n <C-c> -builtin <pass>');
+    dactyl.execute('map -count -modes=i <C-v> -builtin <pass>');
+}
+end
+
 nmap -ex <leader>t :set showtabline!=always,never
 
 js hints.addMode('h', "Echo title of element", function (elem) dactyl.echo(elem.title));
