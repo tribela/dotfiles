@@ -62,6 +62,10 @@ map -builtin gf <pass>
 map -builtin gn <pass>
 group user
 
+group github -locations="https?://github\.com/"
+highlight HintActive background: none !important;
+group user
+
 map \\ <leader>
 
 nmap -builtin <C-]> <C-v><esc>
