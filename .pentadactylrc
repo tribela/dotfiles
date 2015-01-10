@@ -17,7 +17,13 @@ set hinttags+=a:not([name])
 set nextpattern+='^다음'
 set previouspattern+='^이전'
 
-set editor='/usr/local/bin/mvim -f + +"sil! call cursor(0, 0)" '
+if config.OS.isLinux
+    set editor='gvim -f +<line> +"sil! call cursor(0, <column>)" <file>'
+elseif config.OS.isMacOSX
+    set editor='/usr/local/bin/mvim -f +<line> +"sil! call cursor(0, <column>)" '
+elseif config.OS.isWindows
+    set editor='notepad'
+end
 
 set passkeys+=mail.google.com:'`~!#*+-./<C-Down><C-s><Enter>?INU[]acefjklmnopqrsuvxyz',*a,*n,*r,*s,*t,*u,ga,gc,gd,gi,gl,gs,gt,yo
 set passkeys+=plus.google.com:jkonprl<Left><Right><Up><Down>
@@ -78,14 +84,11 @@ imap -builtin <C-n> <esc><C-n>
 imap -builtin <S-cr> <C-v><S-cr>
 imap -builtin <tab> <C-v><tab>
 
-if config.OS.MacOSX
-    set editor='/usr/local/bin/mvim -f + +"sil! call cursor(0, 0)" '
-else
-    " Windows or Linux
-    dactyl.execute('map -count -modes=i,n <C-a> -builtin <pass>');
-    dactyl.execute('map -count -modes=i,n <C-c> -builtin <pass>');
-    dactyl.execute('map -count -modes=i <C-v> -builtin <pass>');
-}
+" Windows or Linux
+if ! config.OS.MacOSX
+    map -count -modes=i,n <C-a> -builtin <pass>
+    map -count -modes=i,n <C-c> -builtin <pass>
+    map -count -modes=i <C-v> -builtin <pass>
 end
 
 nmap -ex <leader>t :set showtabline!=always,never
