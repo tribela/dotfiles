@@ -81,7 +81,7 @@ imap -builtin <tab> <C-v><tab>
 if config.OS.MacOSX
     set editor='/usr/local/bin/mvim -f + +"sil! call cursor(0, 0)" '
 else
-    // Windows or Linux
+    " Windows or Linux
     dactyl.execute('map -count -modes=i,n <C-a> -builtin <pass>');
     dactyl.execute('map -count -modes=i,n <C-c> -builtin <pass>');
     dactyl.execute('map -count -modes=i <C-v> -builtin <pass>');
