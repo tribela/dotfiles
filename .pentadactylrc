@@ -28,7 +28,9 @@ end
 set passkeys+=mail.google.com:'`~!#*+-./<C-Down><C-s><Enter>?INU[]acefjklmnopqrsuvxyz',*a,*n,*r,*s,*t,*u,ga,gc,gd,gi,gl,gs,gt,yo
 set passkeys+=plus.google.com:jkonprl<Left><Right><Up><Down>
 set passkeys+=irccloud.com:<C-A-Up><C-A-Down><tab>
-set passkeys+="https?://kjwon15.net/earthreader/":jkJKnpvroum
+set passkeys+=https?\://twitter.com/:jkrnl.,gr,gh,ga,gf,gn
+set passkeys+=tweetdeck.twitter.com/:hjklrtfndp<cr><bs><C-cr>a?<right><left><up><down>1234567890xs<esc>
+set passkeys+="https?\://kjwon15.net/earthreader/":jkJKnpvroum
 "set passkeys+=*:<cr>
 
 set strictfocus=
@@ -52,20 +54,6 @@ nmap -builtin s <pass>
 nmap -builtin o <pass>
 nmap -builtin <cr> <pass>
 imap <cr> <pass>
-group user
-
-group twitter -locations="https?://twitter\.com/"
-map -builtin j <pass>
-map -builtin k <pass>
-map -builtin r <pass>
-map -builtin n <pass>
-map -builtin l <pass>
-map -builtin . <pass>
-map -builtin gr <pass>
-map -builtin gh <pass>
-map -builtin ga <pass>
-map -builtin gf <pass>
-map -builtin gn <pass>
 group user
 
 group github -locations="https?://github\.com/"
