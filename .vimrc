@@ -1,3 +1,4 @@
+execute pathogen#infect()
 color desert
 colo slate
 set nocompatible
