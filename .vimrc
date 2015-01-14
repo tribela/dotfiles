@@ -85,7 +85,7 @@ noremap <silent><leader>/ :nohls<cr>
 "insert one charactor
 nmap <space> i_<esc>r
 "indent all of files
-nmap <leader>g mzgg=G'z
+nmap <leader>g gg=G``
 
 
 if filereadable('Makefile')
