@@ -35,8 +35,16 @@ Bundle 'toggle'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
+let g:solarized_termtrans=1
 colorscheme solarized
 filetype plugin indent on
+
+au VimEnter *
+            \ hi clear SignColumn |
+            \ hi clear LineNr |
+            \ hi GitGutterAdd ctermfg=2 |
+            \ hi GitGutterDelete ctermfg=1 |
+            \ hi GitGutterChange ctermfg=3
 
 
 
