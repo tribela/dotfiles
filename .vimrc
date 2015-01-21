@@ -32,6 +32,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'toggle'
 
+Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
 colorscheme solarized
