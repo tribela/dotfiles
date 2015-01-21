@@ -1,6 +1,4 @@
 execute pathogen#infect()
-color desert
-colo slate
 set nocompatible
 se nu
 se ru
@@ -33,6 +31,10 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'toggle'
+
+Plugin 'altercation/vim-colors-solarized'
+let g:solarized_termcolors=256
+colorscheme solarized
 filetype plugin indent on
 
 
@@ -104,7 +106,10 @@ au BufWinEnter *.c,*.cc,*.h,*.html,*.php,Makefile,*.py,*.sh loadview
 " ---
 
 if has("gui_running")
-  set lines=60 columns=100
+    set lines=60 columns=100
+    set background=light
+else
+    set background=dark
 endif
 
 " for macvim
