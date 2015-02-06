@@ -86,9 +86,6 @@ nnoremap k gk
 noremap H ^
 noremap L $
 
-"Shortcut esc
-inoremap lkj <esc>
-
 "Force saving root permimssion file
 cmap w!! %!sudo tee > /dev/null %
 
