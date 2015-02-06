@@ -12,8 +12,6 @@
 	st = status -sb
 [push]
 	default = simple
-[core]
-	ignorecase = true
 [diff]
 	tool = vimdiff
 [merge]
