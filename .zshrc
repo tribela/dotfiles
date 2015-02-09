@@ -78,6 +78,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export TERM='xterm-256color'
-export VCPROMPT_FORMAT='<%b%m%u> '
-export PS1='%{${fg[green]}%}%n%{${reset_color}%}@%{${fg[cyan]}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(vcprompt)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
+if [[ $TERM == 'xterm' ]]; then
+    export TERM='xterm-256color'
+fi
+if [[ -x $(which vcprompt) ]]; then
+    export VCPROMPT_FORMAT='<%b%m%u> '
+    alias git_prompt_info='vcprompt'
+fi
+export PS1='%{${fg[green]}%}%n%{${reset_color}%}@%{${fg[cyan]}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
