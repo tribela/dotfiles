@@ -14,8 +14,8 @@ set showtabline=always
 set maxitems=5
 set hinttags+=a:not([name])
 
-set nextpattern+='^다음'
-set previouspattern+='^이전'
+set nextpattern+='^다음','^older'
+set previouspattern+='^이전','^newer'
 
 if config.OS.isLinux
     set editor='gvim -f +<line> +"sil! call cursor(0, <column>)" <file>'
