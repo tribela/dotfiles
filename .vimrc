@@ -92,6 +92,8 @@ cmap w!! %!sudo tee > /dev/null %
 
 "Clear search highlights
 noremap <silent><leader>/ :nohls<cr>
+"When syntax highlight malfunctioning
+noremap <silent><leader>' :syntax sync fromstart<cr>
 
 "insert one charactor
 nmap <space> i_<esc>r
