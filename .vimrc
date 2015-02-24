@@ -1,5 +1,6 @@
 execute pathogen#infect()
 set nocompatible
+colo desert
 se nu
 se ru
 se sw=4
@@ -36,7 +37,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-colorscheme solarized
 filetype plugin indent on
 
 au VimEnter *
@@ -114,6 +114,7 @@ au BufWinEnter *.c,*.cc,*.h,*.html,*.php,Makefile,*.py,*.sh loadview
 " ---
 
 if has("gui_running")
+    colo solarized
     set lines=60 columns=100
     set background=light
 else
