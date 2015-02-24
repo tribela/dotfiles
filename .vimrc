@@ -33,6 +33,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'toggle'
 
+Plugin 'rking/ag.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
