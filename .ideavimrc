@@ -1,0 +1,5 @@
+source ~/.vimrc
+nnoremap _<cr> i<cr><esc>
+
+nnoremap gR :action RenameElement<cr>
+inoremap <C-o> <esc>:action OverrideMethods<cr>
