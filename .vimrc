@@ -36,9 +36,17 @@ Bundle 'toggle'
 Plugin 'rking/ag.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'christoomey/vim-tmux-navigator'
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 filetype plugin indent on
+
+let g:tmux_navigator_no_mappings=1
+nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
+nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
+nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>
+nnoremap <silent> <C-w>w :TmuxNavigatePrevious<cr>
 
 au VimEnter *
             \ hi clear SignColumn |
