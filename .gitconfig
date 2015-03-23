@@ -1,6 +1,8 @@
 [user]
 	name = kjwon15
 	email = kjwonmail@gmail.com
+[core]
+	pager = less -FRX
 [color]
 	ui = true
 [alias]
