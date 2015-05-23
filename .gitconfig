@@ -12,6 +12,8 @@
 	df = diff -b --color-words
 	fix = commit --amend -C HEAD
 	st = status -sb
+[push]
+	default = simple
 [diff]
 	tool = vimdiff
 [merge]
