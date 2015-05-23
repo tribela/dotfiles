@@ -36,7 +36,7 @@ set passkeys+="https?\://kjwon15.net/earthreader/":jkJKnpvroum
 set strictfocus=
 set strictfocus+=twitter.com:laissez-faire,'chrome:*':laissez-faire,*:moderate
 
-group googlesearth -locations="https?://(www\.)?google\.([^/]+)/([^/]*)"
+group googlesearch -locations="https?://(www\.)?google\.([^/]+)/([^/]*)"
 nmap -builtin gi 1gi
 group user
 
