@@ -60,8 +60,8 @@ au VimEnter *
 set list
 set lcs=tab:↹\ ,trail:.,extends:>,precedes:<
 
-au filetype python set cc=80
-au filetype javascript set sw=2 sts=2
+au filetype python setlocal cc=80
+au filetype javascript setlocal sw=2 sts=2
 au filetype java call rainbow#load()
 
 "Spell check
@@ -92,30 +92,30 @@ nnoremap j gj
 nnoremap k gk
 
 "Jump to start and end of line
-noremap H ^
-noremap L $
+nnoremap H ^
+nnoremap L $
 
 "Force saving root permimssion file
-cmap w!! %!sudo tee > /dev/null %
+cnoremap w!! %!sudo tee > /dev/null %
 
 "Clear search highlights
-noremap <silent><leader>/ :nohls<cr>
+nnoremap <silent><leader>/ :nohls<cr>
 "When syntax highlight malfunctioning
-noremap <silent><leader>' :syntax sync fromstart<cr>
+nnoremap <silent><leader>' :syntax sync fromstart<cr>
 
 "insert one charactor
-nmap <space> i_<esc>r
+nnoremap <space> i_<esc>r
 "indent all of files
 nmap <leader>g gg=G``
 
 
 if filereadable('Makefile')
-  au Filetype c set makeprg=make
+  au Filetype c setlocal makeprg=make
 else
-  au FileType c set makeprg=gcc\ -o\ %<\ %
+  au FileType c setlocal makeprg=gcc\ -o\ %<\ %
+    au FileType python setlocal makeprg=python\ -i\ %
 endif
-au FileType python set makeprg=python\ -i\ %
-au FileType html set sw=2
+au FileType html setlocal sw=2
 
 
 " set cursor to the last worked line
