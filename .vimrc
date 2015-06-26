@@ -37,6 +37,7 @@ Plugin 'rking/ag.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ciaranm/detectindent'
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 filetype plugin indent on
