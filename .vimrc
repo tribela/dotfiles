@@ -95,7 +95,9 @@ nnoremap k gk
 
 "Jump to start and end of line
 nnoremap H ^
+vnoremap H ^
 nnoremap L $
+vnoremap L $
 
 "Force saving root permimssion file
 cnoremap w!! %!sudo tee > /dev/null %
