@@ -23,6 +23,7 @@ set autoread "외부에서 변경시 자동 읽기
 set ve=onemore "줄 끝까지 커서 이동 가능
 set modeline
 set modelines=5
+set autochdir
 
 " Vundle
 filetype off
