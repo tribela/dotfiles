@@ -86,3 +86,4 @@ if [[ -x $(which vcprompt) ]]; then
     alias git_prompt_info='vcprompt'
 fi
 export PS1='%{${fg[green]}%}%n%{${reset_color}%}@%{${fg[cyan]}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
