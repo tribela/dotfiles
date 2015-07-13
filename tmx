@@ -1,0 +1,15 @@
+#!/bin/bash
+if [[ -n "$TMUX" ]]; then
+    echo "You already inside tmux"
+    exit
+fi
+
+base_session=$1
+
+if ! tmux has-session -t $base_session 2>/dev/null; then
+    tmux new-session -d -s $base_session -n "$"
+fi
+
+new_session=${base_session}_`date +%m%d_%H%M%S`
+tmux new-session -d -t $base_session -s $new_session
+tmux attach-session -t $new_session \; set-option destroy-unattached
