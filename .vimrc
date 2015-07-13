@@ -41,6 +41,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ciaranm/detectindent'
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
+au BufRead * DetectIndent
 filetype plugin indent on
 
 let g:tmux_navigator_no_mappings=1
