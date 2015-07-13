@@ -112,6 +112,8 @@ nnoremap <silent><leader>' :syntax sync fromstart<cr>
 nnoremap <space> i_<esc>r
 "indent all of files
 nmap <leader>g gg=G``
+" Insert one line
+nnoremap <cr> o<esc>
 
 
 if filereadable('Makefile')
