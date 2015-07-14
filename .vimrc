@@ -45,6 +45,7 @@ au BufRead * DetectIndent
 Plugin 'mattn/emmet-vim' " HTML zencoding.
 let g:user_emmet_install_global = 0
 autocmd Filetype xml,html,css EmmetInstall
+Plugin 'jiangmiao/auto-pairs'
 
 filetype plugin indent on
 
