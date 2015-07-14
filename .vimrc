@@ -65,7 +65,6 @@ set lcs=tab:↹\ ,trail:.,extends:>,precedes:<
 
 au filetype python setlocal cc=80
 au filetype javascript setlocal sw=2 sts=2
-au filetype java call rainbow#load()
 
 "Spell check
 au filetype gitcommit setlocal spell textwidth=72 | nnoremap <C-]> 1z=``
