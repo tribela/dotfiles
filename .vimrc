@@ -37,14 +37,15 @@ Bundle 'toggle'
 Plugin 'rking/ag.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ciaranm/detectindent'
+au BufRead * DetectIndent
 Plugin 'mattn/emmet-vim' " HTML zencoding.
 let g:user_emmet_install_global = 0
 autocmd Filetype xml,html,css EmmetInstall
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-au BufRead * DetectIndent
+
 filetype plugin indent on
 
 let g:tmux_navigator_no_mappings=1
