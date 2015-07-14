@@ -39,6 +39,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ciaranm/detectindent'
+Plugin 'mattn/emmet-vim' " HTML zencoding.
+let g:user_emmet_install_global = 0
+autocmd Filetype xml,html,css EmmetInstall
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 au BufRead * DetectIndent
