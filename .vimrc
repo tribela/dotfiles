@@ -56,6 +56,12 @@ nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
 nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>
 nnoremap <silent> <C-w>w :TmuxNavigatePrevious<cr>
 
+inoremap <silent> <C-w>h <esc>:TmuxNavigateLeft<cr>
+inoremap <silent> <C-w>j <esc>:TmuxNavigateDown<cr>
+inoremap <silent> <C-w>k <esc>:TmuxNavigateUp<cr>
+inoremap <silent> <C-w>l <esc>:TmuxNavigateRight<cr>
+inoremap <silent> <C-w>w <esc>:TmuxNavigatePrevious<cr>
+
 au VimEnter *
             \ hi clear SignColumn |
             \ hi clear LineNr |
