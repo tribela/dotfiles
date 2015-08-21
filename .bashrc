@@ -1,6 +1,6 @@
 export EDITOR='vim'
 export PS1='\u@\h:\W $'
-alias ls='ls -G'
+alias ls='ls -G --color=auto'
 alias ll='ls -l'
 alias lf='ls -F'
 alias gitk='gitk --all'
