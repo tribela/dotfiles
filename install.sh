@@ -8,3 +8,7 @@ files=('.bashrc' '.gitconfig' '.ideavimrc' '.oh-my-zsh' '.pentadactylrc' '.tmux.
 for file in ${files[@]}; do
     ln -sf $path/$file ~/$file
 done
+
+vim +PluginInstall +qall
+
+[ -d "$HOME/.local/bin" ] && ln -sf $path/tmx $HOME/.local/bin/tmx
