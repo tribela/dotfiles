@@ -78,9 +78,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+if [ -d "$HOME/.local/bin" ]; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
 if [[ $TERM == 'xterm' ]]; then
     export TERM='xterm-256color'
 fi
+
 if [[ -x $(which vcprompt) ]]; then
     export VCPROMPT_FORMAT='<%b%m%u> '
     alias git_prompt_info='vcprompt'
