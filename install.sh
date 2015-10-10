@@ -9,6 +9,6 @@ for file in ${files[@]}; do
     ln -sf $path/$file ~/$file
 done
 
-vim +PluginInstall +qall
+vim +PlugInstall +qall
 
 [ -d "$HOME/.local/bin" ] && ln -sf $path/tmx $HOME/.local/bin/tmx

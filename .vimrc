@@ -1,4 +1,3 @@
-execute pathogen#infect()
 set nocompatible
 colo desert
 se nu
@@ -24,35 +23,25 @@ set ve=onemore "줄 끝까지 커서 이동 가능
 set modeline
 set modelines=5
 set autochdir
-
-" Vundle
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'tpope/vim-fugitive'
-Bundle 'toggle'
-
-Plugin 'rking/ag.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'ciaranm/detectindent'
-au BufRead * DetectIndent
-Plugin 'mattn/emmet-vim' " HTML zencoding.
-let g:user_emmet_install_global = 0
-autocmd Filetype xml,html,css EmmetInstall
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'easymotion/vim-easymotion'
-map / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map n <Plug>(easymotion-next)
-map N <Plug>(easymotion-prev)
-
 filetype plugin indent on
 
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-fugitive'
+Plug 'toggle'
+
+Plug 'rking/ag.vim'
+Plug 'airblade/vim-gitgutter'
+au VimEnter *
+            \ hi clear SignColumn |
+            \ hi clear LineNr |
+            \ hi GitGutterAdd ctermfg=2 |
+            \ hi GitGutterDelete ctermfg=1 |
+            \ hi GitGutterChange ctermfg=3
+Plug 'altercation/vim-colors-solarized'
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+Plug 'christoomey/vim-tmux-navigator'
 let g:tmux_navigator_no_mappings=1
 nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
@@ -65,13 +54,17 @@ inoremap <silent> <C-w>j <esc>:TmuxNavigateDown<cr>
 inoremap <silent> <C-w>k <esc>:TmuxNavigateUp<cr>
 inoremap <silent> <C-w>l <esc>:TmuxNavigateRight<cr>
 inoremap <silent> <C-w>w <esc>:TmuxNavigatePrevious<cr>
+Plug 'ciaranm/detectindent'
+au BufRead * DetectIndent
+Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css']} " HTML zencoding.
+Plug 'jiangmiao/auto-pairs'
+Plug 'easymotion/vim-easymotion'
+map / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map n <Plug>(easymotion-next)
+map N <Plug>(easymotion-prev)
 
-au VimEnter *
-            \ hi clear SignColumn |
-            \ hi clear LineNr |
-            \ hi GitGutterAdd ctermfg=2 |
-            \ hi GitGutterDelete ctermfg=1 |
-            \ hi GitGutterChange ctermfg=3
+call plug#end()
 
 
 
