@@ -23,6 +23,8 @@ set ve=onemore "줄 끝까지 커서 이동 가능
 set modeline
 set modelines=5
 set autochdir
+set showcmd
+set wildmenu
 filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
