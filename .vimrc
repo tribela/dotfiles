@@ -30,6 +30,7 @@ filetype plugin indent on
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'  " gcc to comment
 Plug 'toggle'
 
 Plug 'rking/ag.vim'
@@ -59,6 +60,7 @@ inoremap <silent> <C-w>w <esc>:TmuxNavigatePrevious<cr>
 Plug 'ciaranm/detectindent'
 au BufRead * DetectIndent
 Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css']} " HTML zencoding.
+Plug 'lepture/vim-jinja', {'for': ['html', 'jinja']}
 Plug 'jiangmiao/auto-pairs'
 Plug 'easymotion/vim-easymotion'
 map / <Plug>(easymotion-sn)
