@@ -124,7 +124,12 @@ nnoremap <space> i_<esc>r
 "indent all of files
 nmap <leader>g gg=G``
 " Insert one line
-nnoremap <cr> o<esc>
+function s:MapNewlineInsert()
+  if getbufvar(winbufnr(0), '&modifiable') && maparg('<CR>', 'n') == ''
+    nnoremap <buffer> <CR> o<esc>
+  endif
+endfunction
+autocmd BufNewFile,BufRead * call s:MapNewlineInsert()
 
 
 if filereadable('Makefile')
