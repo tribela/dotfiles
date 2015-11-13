@@ -31,6 +31,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'  " gcc to comment
+Plug 'tpope/vim-surround'
 Plug 'toggle'
 
 Plug 'rking/ag.vim'
