@@ -10,7 +10,7 @@ set guioptions=brsTn
 set hintkeys=asdfg;lkjhweio
 set hintmatching=firstletters
 set scroll=5
-set showtabline=always
+"set showtabline=always
 set maxitems=5
 set hinttags+=a:not([name])
 
