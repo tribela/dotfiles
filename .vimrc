@@ -115,15 +115,16 @@ vnoremap L $
 "Force saving root permimssion file
 cnoremap w!! %!sudo tee > /dev/null %
 
+map <space> <leader>
 "Clear search highlights
 nnoremap <silent><leader>/ :nohls<cr>
 "When syntax highlight malfunctioning
 nnoremap <silent><leader>' :syntax sync fromstart<cr>
 
 "insert one charactor
-nnoremap <space> i_<esc>r
+nnoremap <leader><space> i_<esc>r
 "indent all of files
-nmap <leader>g gg=G``
+nmap <leader>g gg=G``:%s/\s\+$//<cr>``
 " Insert one line
 function s:MapNewlineInsert()
   if getbufvar(winbufnr(0), '&modifiable') && maparg('<CR>', 'n') == ''
