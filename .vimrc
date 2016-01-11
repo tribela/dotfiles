@@ -45,6 +45,8 @@ au VimEnter *
 Plug 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
+Plug 'hachy/eva01.vim'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'christoomey/vim-tmux-navigator'
 let g:tmux_navigator_no_mappings=1
 nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
@@ -73,6 +75,7 @@ call plug#end()
 
 
 
+colo eva01
 set list
 set lcs=tab:↹\ ,trail:.,extends:>,precedes:<
 
@@ -150,7 +153,7 @@ au BufWinEnter *.c,*.cc,*.h,*.html,*.php,Makefile,*.py,*.sh loadview
 " ---
 
 if has("gui_running")
-    colo solarized
+    colo PaperColor
     set lines=60 columns=100
     set background=light
 else
