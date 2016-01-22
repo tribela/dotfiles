@@ -29,6 +29,9 @@ filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'kjwon15/vim-transparent'
+autocmd ColorScheme * call background#clear_background()
+
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'  " gcc to comment
 Plug 'tpope/vim-surround'
@@ -36,12 +39,6 @@ Plug 'toggle'
 
 Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
-au VimEnter *
-            \ hi clear SignColumn |
-            \ hi clear LineNr |
-            \ hi GitGutterAdd ctermfg=2 |
-            \ hi GitGutterDelete ctermfg=1 |
-            \ hi GitGutterChange ctermfg=3
 Plug 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
@@ -135,30 +132,6 @@ function s:MapNewlineInsert()
   endif
 endfunction
 autocmd BufNewFile,BufRead * call s:MapNewlineInsert()
-
-let g:transparent_background=1
-function s:removeBackground()
-  if g:transparent_background
-    hi Normal ctermbg=NONE
-    hi Comment ctermbg=NONE
-    hi Constant ctermbg=NONE
-    hi Special ctermbg=NONE
-    hi Identifier ctermbg=NONE
-    hi Statement ctermbg=NONE
-    hi PreProc ctermbg=NONE
-    hi Type ctermbg=NONE
-    hi Underlined ctermbg=NONE
-    hi Todo ctermbg=NONE
-    hi String ctermbg=NONE
-    hi Function ctermbg=NONE
-    hi Conditional ctermbg=NONE
-    hi Repeat ctermbg=NONE
-    hi Operator ctermbg=NONE
-    hi Structure ctermbg=NONE
-  endif
-endfunction
-autocmd ColorScheme * call s:removeBackground()
-
 
 if filereadable('Makefile')
   au Filetype c setlocal makeprg=make
