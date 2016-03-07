@@ -74,7 +74,11 @@ call plug#end()
 
 
 set list
-set lcs=tab:↹\ ,trail:.,extends:>,precedes:<
+try
+  set lcs=tab:↹\ ,trail:.,extends:>,precedes:<
+catch /E474/
+  set lcs=tab:\|\ ,trail:.,extends:>,precedes:<
+endtry
 
 au filetype python setlocal cc=80
 au filetype javascript setlocal sw=2 sts=2
