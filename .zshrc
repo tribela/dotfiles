@@ -82,8 +82,10 @@ if [ -d "$HOME/.local/bin" ]; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
 
-if [[ $TERM == 'xterm' ]]; then
+if [[ -z $TMUX ]]; then
     export TERM='xterm-256color'
+else
+    export TERM='screen-256color'
 fi
 
 if [[ -x $(which vcprompt) ]]; then

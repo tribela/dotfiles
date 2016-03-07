@@ -29,6 +29,9 @@ filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'kjwon15/vim-transparent'
+autocmd ColorScheme * call background#clear_background()
+
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'  " gcc to comment
 Plug 'tpope/vim-surround'
@@ -36,15 +39,11 @@ Plug 'toggle'
 
 Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
-au VimEnter *
-            \ hi clear SignColumn |
-            \ hi clear LineNr |
-            \ hi GitGutterAdd ctermfg=2 |
-            \ hi GitGutterDelete ctermfg=1 |
-            \ hi GitGutterChange ctermfg=3
 Plug 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
+Plug 'hachy/eva01.vim'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'christoomey/vim-tmux-navigator'
 let g:tmux_navigator_no_mappings=1
 nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
@@ -73,6 +72,7 @@ call plug#end()
 
 
 
+colo eva01
 set list
 try
   set lcs=tab:↹\ ,trail:.,extends:>,precedes:<
@@ -137,7 +137,6 @@ function s:MapNewlineInsert()
 endfunction
 autocmd BufNewFile,BufRead * call s:MapNewlineInsert()
 
-
 if filereadable('Makefile')
   au Filetype c setlocal makeprg=make
 else
@@ -154,7 +153,7 @@ au BufWinEnter *.c,*.cc,*.h,*.html,*.php,Makefile,*.py,*.sh loadview
 " ---
 
 if has("gui_running")
-    colo solarized
+    colo PaperColor
     set lines=60 columns=100
     set background=light
 else

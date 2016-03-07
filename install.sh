@@ -11,4 +11,5 @@ done
 
 vim +PlugInstall +qall
 
-[ -d "$HOME/.local/bin" ] && ln -sf $path/tmx $HOME/.local/bin/tmx
+mkdir -p "$HOME/.local/bin"
+ln -sf $path/tmx $HOME/.local/bin/tmx
