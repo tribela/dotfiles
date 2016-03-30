@@ -94,3 +94,6 @@ if [[ -x $(which vcprompt) ]]; then
 fi
 export PS1='%{${fg[green]}%}%n%{${reset_color}%}@%{${fg[cyan]}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
