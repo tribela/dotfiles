@@ -11,6 +11,7 @@ se cin
 set smartindent
 syntax on
 set noeol
+set backspace=indent,eol,start
 set nobackup
 set hlsearch
 set incsearch " 순간검색
@@ -36,7 +37,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'  " gcc to comment
 Plug 'tpope/vim-surround'
 Plug 'toggle'
-
 Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
@@ -44,29 +44,11 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 Plug 'hachy/eva01.vim'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'christoomey/vim-tmux-navigator'
-let g:tmux_navigator_no_mappings=1
-nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
-nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
-nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>
-nnoremap <silent> <C-w>w :TmuxNavigatePrevious<cr>
-
-inoremap <silent> <C-w>h <esc>:TmuxNavigateLeft<cr>
-inoremap <silent> <C-w>j <esc>:TmuxNavigateDown<cr>
-inoremap <silent> <C-w>k <esc>:TmuxNavigateUp<cr>
-inoremap <silent> <C-w>l <esc>:TmuxNavigateRight<cr>
-inoremap <silent> <C-w>w <esc>:TmuxNavigatePrevious<cr>
 Plug 'ciaranm/detectindent'
 au BufRead * DetectIndent
 Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'jinja']} " HTML zencoding.
 Plug 'lepture/vim-jinja', {'for': ['html', 'jinja']}
 Plug 'jiangmiao/auto-pairs'
-Plug 'easymotion/vim-easymotion'
-map / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map n <Plug>(easymotion-next)
-map N <Plug>(easymotion-prev)
 
 call plug#end()
 
