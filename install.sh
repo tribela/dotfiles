@@ -9,6 +9,8 @@ for file in ${files[@]}; do
     ln -sf $path/$file ~/$file
 done
 
+./.fzf/install
+
 vim +PlugInstall +qall
 
 mkdir -p "$HOME/.local/bin"
