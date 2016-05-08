@@ -11,6 +11,7 @@ se cin
 set smartindent
 syntax on
 set noeol
+set backspace=indent,eol,start
 set nobackup
 set hlsearch
 set incsearch " 순간검색
@@ -36,7 +37,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'  " gcc to comment
 Plug 'tpope/vim-surround'
 Plug 'toggle'
-
 Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
@@ -64,7 +64,11 @@ call plug#end()
 
 colo eva01
 set list
-set lcs=tab:↹\ ,trail:.,extends:>,precedes:<
+try
+  set lcs=tab:↹\ ,trail:.,extends:>,precedes:<
+catch /E474/
+  set lcs=tab:\|\ ,trail:.,extends:>,precedes:<
+endtry
 
 au filetype python setlocal cc=80
 au filetype javascript setlocal sw=2 sts=2
