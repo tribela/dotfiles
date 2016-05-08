@@ -50,6 +50,14 @@ Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'jinja']} " HTML zencodi
 Plug 'lepture/vim-jinja', {'for': ['html', 'jinja']}
 Plug 'jiangmiao/auto-pairs'
 
+if has('nvim')
+  function! DoRemote(arg)
+    UpdateRemotePlugins
+  endfunction
+  Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+  let g:deoplete#enable_at_startup = 1
+endif
+
 call plug#end()
 
 
