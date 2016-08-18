@@ -14,6 +14,7 @@
 	st = status -sb
 [push]
 	default = simple
+	followTags = true
 [diff]
 	tool = vimdiff
 [merge]
