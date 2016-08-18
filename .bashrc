@@ -18,3 +18,5 @@ fi
 
 [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 hash virtualenvwrapper_lazy.sh 2>/dev/null && source $(which virtualenvwrapper_lazy.sh)
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
