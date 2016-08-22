@@ -16,5 +16,6 @@
 	default = simple
 [diff]
 	tool = vimdiff
+	compactionHeuristic = true
 [merge]
 	tool = vimdiff
