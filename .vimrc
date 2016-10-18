@@ -101,6 +101,10 @@ imap <C-L> <esc><C-W>>i
 nnoremap j gj
 nnoremap k gk
 
+"Up and Down key for scroll
+nnoremap <up> <C-y>
+nnoremap <down> <C-e>
+
 "Jump to start and end of line
 nnoremap H ^
 vnoremap H ^
