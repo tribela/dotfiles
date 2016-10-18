@@ -2,7 +2,7 @@
 
 loadplugins '\.(js|penta)$'
 group user
-highlight Hint font: bold 20px "Source Code Pro", monospace !important; margin: -.2ex; padding: 0 0 0 1px; outline: 1px solid rgba(0, 0, 0, .5); background: rgba(255, 248, 231, .8) !important; color: black !important;
+highlight Hint font: bold 20px "Source Code Pro", "Ubuntu Mono Bold", monospace !important; margin: -.2ex; padding: 0 0 0 1px; outline: 1px solid rgba(0, 0, 0, .5); background: rgba(255, 248, 231, .8) !important; color: black !important;
 map -count -modes=n j -builtin <count><C-d>
 map -count -modes=n k -builtin <count><C-u>
 "set autocomplete=
