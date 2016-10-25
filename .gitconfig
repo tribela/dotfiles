@@ -17,5 +17,6 @@
 	followTags = true
 [diff]
 	tool = vimdiff
+	compactionHeuristic = true
 [merge]
 	tool = vimdiff
