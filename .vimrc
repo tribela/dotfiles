@@ -50,14 +50,14 @@ Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'jinja']} " HTML zencodi
 Plug 'lepture/vim-jinja', {'for': ['html', 'jinja']}
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
-Plug 'davidhalter/jedi'
+Plug 'davidhalter/jedi', {'for': 'python'}
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   let g:deoplete#enable_at_startup = 1
-  Plug 'zchee/deoplete-jedi'
+  Plug 'zchee/deoplete-jedi', {'for': 'python'}
 else
-  Plug 'davidhalter/jedi-vim'
+  Plug 'davidhalter/jedi-vim', {'for': 'python'}
 endif
 
 call plug#end()
