@@ -117,6 +117,12 @@ vnoremap L $
 "Force saving root permimssion file
 cnoremap w!! %!sudo tee > /dev/null %
 
+"Regex search
+nnoremap / /\v
+vnoremap / /\v
+cnoremap %s/ %smagic/
+cnoremap \>s/ \>magic/
+
 map <space> <leader>
 "Clear search highlights
 nnoremap <silent><leader>/ :nohls<cr>
