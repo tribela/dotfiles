@@ -20,3 +20,4 @@
 	compactionHeuristic = true
 [merge]
 	tool = vimdiff
+	conflictstyle = diff3

@@ -52,6 +52,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'davidhalter/jedi', {'for': 'python'}
 
+Plug 'nathanalderson/yang.vim', {'for': 'yang'}
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   let g:deoplete#enable_at_startup = 1
@@ -126,7 +128,7 @@ nnoremap <leader><space> i_<esc>r
 "indent all of files
 nmap <leader>g gg=G``:%s/\s\+$//<cr>``
 " Insert one line
-function s:MapNewlineInsert()
+function! s:MapNewlineInsert()
   if getbufvar(winbufnr(0), '&modifiable') && maparg('<CR>', 'n') == ''
     nnoremap <buffer> <CR> o<esc>
   endif

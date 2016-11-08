@@ -102,3 +102,5 @@ export PS1='%{${fg[green]}%}%n%{${reset_color}%}@%{${fg[cyan]}%}%m%{${fg_bold[ma
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$NPM_PACKAGES/bin:$PATH"
