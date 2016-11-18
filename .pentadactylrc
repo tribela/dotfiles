@@ -28,7 +28,7 @@ end
 set passkeys+=mail.google.com:'`~!#*+-./<C-Down><C-s><Enter>?INU[]acefjklmnopqrsuvxyz',*a,*n,*r,*s,*t,*u,ga,gc,gd,gi,gl,gs,gt,yo
 set passkeys+=inbox.google.com:'!#./[]acefhijkmnopqrstuxyz<esc><left><right><S-p><S-a><S-r><S-b><S-m><S-esc><C-.><C-,><Enter><S-x>'
 set passkeys+=plus.google.com:jkonprl<Left><Right><Up><Down>
-set passkeys+=youtube.com:0123456789f<Left><Right><Up><Down><Space>
+set passkeys+=youtube.com/watch:0123456789f<Left><Right><Up><Down><Space>
 set passkeys+=irccloud.com:<C-A-Up><C-A-Down><tab>
 set passkeys+=https?\://twitter.com/:jkrnl.,gr,gh,ga,gf,gn
 set passkeys+=tweetdeck.twitter.com/:hjklrtfndp<cr><bs><C-cr>a?<right><left><up><down>1234567890xs<esc>
