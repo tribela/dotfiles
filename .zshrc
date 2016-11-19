@@ -100,6 +100,12 @@ fi
 export PS1='%{${fg[green]}%}%n%{${reset_color}%}@%{${fg[cyan]}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Virtualenv wrapper
+if hash virtualenvwrapper_lazy.sh; then
+    export VIRTUALENVWRAPPER_SCRIPT="$HOME/.local/bin/virtualenvwrapper.sh"
+    source ~/.local/bin/virtualenvwrapper_lazy.sh
+fi
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 NPM_PACKAGES="${HOME}/.npm-packages"
