@@ -51,6 +51,7 @@ Plug 'lepture/vim-jinja', {'for': ['html', 'jinja']}
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'davidhalter/jedi', {'for': 'python'}
+Plug 'nvie/vim-flake8', {'for': 'python'}
 
 Plug 'nathanalderson/yang.vim', {'for': 'yang'}
 
