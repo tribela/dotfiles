@@ -86,7 +86,7 @@ autocmd BufRead,BufNewFile *.md,*.rst setlocal spell | nnoremap <C-]> 1z=``
 "Scroll before edge
 set scrolloff=10
 
-set fencs=utf-8,cp949,euc-kr
+set fencs=utf-8,utf-16le,cp949,euc-kr
 
 
 map <C-S> :w<cr>
