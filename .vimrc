@@ -35,6 +35,7 @@ autocmd ColorScheme * call background#clear_background()
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'  " gcc to comment
+autocmd FileType crontab setlocal commentstring=#\ %s
 Plug 'tpope/vim-surround'
 Plug 'toggle'
 Plug 'rking/ag.vim'
