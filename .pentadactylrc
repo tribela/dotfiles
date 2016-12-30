@@ -35,6 +35,11 @@ set passkeys+=tweetdeck.twitter.com/:hjklrtfndp<cr><bs><C-cr>a?<right><left><up>
 set passkeys+="https?\://kjwon15.net/earthreader/":jkJKnpvroum
 "set passkeys+=*:<cr>
 
+nmap -builtin <left> <pass>
+nmap -builtin <right> <pass>
+nmap -builtin <up> <pass>
+nmap -builtin <down> <pass>
+
 set strictfocus=
 set strictfocus+=twitter.com:laissez-faire,'chrome:*':laissez-faire,*:moderate
 
