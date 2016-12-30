@@ -101,9 +101,13 @@ export PS1='%{${fg[green]}%}%n%{${reset_color}%}@%{${fg[cyan]}%}%m%{${fg_bold[ma
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Virtualenv wrapper
-if hash virtualenvwrapper_lazy.sh; then
-    export VIRTUALENVWRAPPER_SCRIPT="$HOME/.local/bin/virtualenvwrapper.sh"
-    source ~/.local/bin/virtualenvwrapper_lazy.sh
+if hash pyenv; then
+    pyenv virtualenvwrapper_lazy
+elif hash virtualenvwrapper_lazy.sh; then
+    # export VIRTUALENVWRAPPER_SCRIPT="$HOME/.local/bin/virtualenvwrapper.sh"
+    # source ~/.local/bin/virtualenvwrapper_lazy.sh
+    export VIRTUALENVWRAPPER_SCRIPT=$(which virtualenvwrapper.sh)
+    source $(which virtualenvwrapper_lazy.sh)
 fi
 
 ### Added by the Heroku Toolbelt
