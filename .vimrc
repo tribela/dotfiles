@@ -36,6 +36,7 @@ autocmd ColorScheme * call background#clear_background()
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'  " gcc to comment
 autocmd FileType crontab setlocal commentstring=#\ %s
+autocmd FileType ia64 setlocal commentstring=;\ %s
 Plug 'tpope/vim-surround'
 Plug 'toggle'
 Plug 'rking/ag.vim'
@@ -87,7 +88,7 @@ autocmd BufRead,BufNewFile *.md,*.rst setlocal spell | nnoremap <C-]> 1z=``
 "Scroll before edge
 set scrolloff=10
 
-set fencs=utf-8,utf-16le,cp949,euc-kr
+set fencs=utf-8,utf-16le,cp437,cp949,euc-kr
 
 
 map <C-S> :w<cr>
