@@ -35,6 +35,7 @@ set passkeys+=tweetdeck.twitter.com/:hjklrtfndp<cr><bs><C-cr>a?<right><left><up>
 set passkeys+="https?\://kjwon15.net/earthreader/":jkJKnpvroum
 "set passkeys+=*:<cr>
 
+nmap -builtin <esc> <pass>
 nmap -builtin <left> <pass>
 nmap -builtin <right> <pass>
 nmap -builtin <up> <pass>
@@ -83,7 +84,7 @@ imap -builtin <tab> <C-v><tab>
 if ! config.OS.MacOSX
     map -count -modes=i,n <C-a> -builtin <pass>
     map -count -modes=i,n <C-c> -builtin <pass>
-    map -count -modes=i <C-v> -builtin <pass>
+    map -count -modes=i,c <C-v> -builtin <pass>
 end
 
 nmap -ex <leader>t :set showtabline!=always,never
