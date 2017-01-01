@@ -1,7 +1,6 @@
 #!/bin/bash
 path=`dirname $(readlink -e $0)`
 cd $path
-git submodule update --init
 
 files=('.bashrc' '.gitconfig' '.ideavimrc' '.pentadactylrc' '.tmux.conf' '.vim' '.vimrc' '.zshrc')
 
@@ -9,6 +8,13 @@ for file in ${files[@]}; do
     ln -sf $path/$file ~/$file
 done
 
+\curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+if hash nvim; then
+    \curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
 
 vim +PlugInstall +qall
 
