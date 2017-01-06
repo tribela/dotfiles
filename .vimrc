@@ -28,7 +28,11 @@ set showcmd
 set wildmenu
 filetype plugin indent on
 
-call plug#begin('~/.vim/plugged')
+if has('nvim')
+  call plug#begin('~/.config/nvim/plugged')
+else
+  call plug#begin('~/.vim/plugged')
+endif
 
 Plug 'kjwon15/vim-transparent'
 autocmd ColorScheme * call background#clear_background()
