@@ -12,7 +12,7 @@ set hintmatching=firstletters
 set scroll=5
 "set showtabline=always
 set maxitems=5
-set hinttags+=a:not([name])
+set hinttags+=a:not([name]),[role=button],[role=tab]
 
 set nextpattern+='^다음','^older'
 set previouspattern+='^이전','^newer'
