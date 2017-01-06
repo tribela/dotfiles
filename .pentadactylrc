@@ -82,7 +82,7 @@ imap -builtin <tab> <C-v><tab>
 
 " Windows or Linux
 if ! config.OS.MacOSX
-    map -count -modes=i,n <C-a> -builtin <pass>
+    map -count -modes=i <C-a> -builtin <pass>
     map -count -modes=i,n <C-c> -builtin <pass>
     map -count -modes=i,c <C-v> -builtin <pass>
 end
