@@ -132,7 +132,6 @@ cnoremap \>s/ \>magic/
 
 " Insert timestamp
 inoremap <C-e> <C-r>=strftime("%Y-%m-%d %H:%M:%S %z")<cr>
-nnoremap <C-e> i<C-r>=strftime("%Y-%m-%d %H:%M:%S %z")<cr><esc>
 
 map <space> <leader>
 "Clear search highlights
