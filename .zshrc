@@ -97,7 +97,9 @@ fi
 if [[ -s /etc/zsh_command_not_found ]]; then
     source /etc/zsh_command_not_found
 fi
-export PS1='%{${fg[green]}%}%n%{${reset_color}%}@%{${fg[cyan]}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
+host_color=$(hostname | md5sum)
+host_color="[38;5;$((0x${host_color:0:16} % 15 + 1))m"
+export PS1='%{${fg[green]}%}%n%{${reset_color}%}@%{${host_color}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Virtualenv wrapper
