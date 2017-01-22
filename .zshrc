@@ -97,8 +97,32 @@ fi
 if [[ -s /etc/zsh_command_not_found ]]; then
     source /etc/zsh_command_not_found
 fi
-host_color=$(hostname | md5sum)
-host_color="[38;5;$((0x${host_color:0:12} % 255 + 1))m"
+
+abs() {
+    [ $1 -lt 0 ] && echo $((- $1)) || echo $1
+}
+
+get_rgb() {
+    n=$(md5sum <<< $1)
+    n=$((0x${n:0:12}))
+    local degree=$(($n % 360))
+    local x=$((255 - $(abs $((${degree} * 255 / 60 % (255*2) - 255)) ) ))
+    if [ $degree -lt 60 ]; then
+        echo "255;$x;0"
+    elif [ $degree -lt 120 ]; then
+        echo "$x;255;0"
+    elif [ $degree -lt 180 ]; then
+        echo "0;255;$x"
+    elif [ $degree -lt 240 ]; then
+        echo "0;$x;255"
+    elif [ $degree -lt 300 ]; then
+        echo "$x;0;255"
+    elif [ $degree -lt 360 ]; then
+        echo "255;0;$x"
+    fi
+}
+
+host_color="[38;2;$(get_rgb $(hostname))m"
 export PS1='%{${fg[green]}%}%n%{${reset_color}%}@%{${host_color}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
