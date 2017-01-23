@@ -122,8 +122,9 @@ get_rgb() {
     fi
 }
 
+username_color="[38;2;$(get_rgb $USER)m"
 host_color="[38;2;$(get_rgb $(hostname))m"
-export PS1='%{${fg[green]}%}%n%{${reset_color}%}@%{${host_color}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
+export PS1='%{${username_color}%}%n%{${reset_color}%}@%{${host_color}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Virtualenv wrapper
