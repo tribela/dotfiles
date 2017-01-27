@@ -128,7 +128,7 @@ export PS1='%{${username_color}%}%n%{${reset_color}%}@%{${host_color}%}%m%{${fg_
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Virtualenv wrapper
-if hash pyenv; then
+if hash pyenv 2>/dev/null; then
     pyenv virtualenvwrapper_lazy
 elif hash virtualenvwrapper_lazy.sh; then
     # export VIRTUALENVWRAPPER_SCRIPT="$HOME/.local/bin/virtualenvwrapper.sh"
