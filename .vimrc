@@ -60,6 +60,12 @@ Plug 'sheerun/vim-polyglot'
 Plug 'davidhalter/jedi', {'for': 'python'}
 Plug 'nvie/vim-flake8', {'for': 'python'}
 
+" Snipmate
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+" End snipmate
+
 Plug 'nathanalderson/yang.vim', {'for': 'yang'}
 
 if has('nvim')
