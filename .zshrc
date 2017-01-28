@@ -127,10 +127,23 @@ host_color="[38;2;$(get_rgb $(hostname))m"
 export PS1='%{${username_color}%}%n%{${reset_color}%}@%{${host_color}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Pyenv
+if [ -d $HOME/.pyenv/bin ]; then
+    export PATH=$HOME/.pyenv/bin:$PATH
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
+# Rbenv
+if [ -d "$HOME/.rbenv/bin" ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
+
 # Virtualenv wrapper
 if hash pyenv 2>/dev/null; then
     pyenv virtualenvwrapper_lazy
-elif hash virtualenvwrapper_lazy.sh; then
+elif hash virtualenvwrapper_lazy.sh 2>/dev/null; then
     # export VIRTUALENVWRAPPER_SCRIPT="$HOME/.local/bin/virtualenvwrapper.sh"
     # source ~/.local/bin/virtualenvwrapper_lazy.sh
     export VIRTUALENVWRAPPER_SCRIPT=$(which virtualenvwrapper.sh)
