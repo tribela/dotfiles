@@ -74,6 +74,10 @@ if has('nvim')
   let g:deoplete#enable_at_startup = 1
   Plug 'zchee/deoplete-jedi', {'for': 'python'}
 else
+  Plug 'Shougo/neocomplete.vim'
+  let g:neocomplete#enable_at_startup = 1
+  Plug 'Shougo/neosnippet'
+  Plug 'Shougo/neosnippet-snippets'
   Plug 'davidhalter/jedi-vim', {'for': 'python'}
 endif
 
