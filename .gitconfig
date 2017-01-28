@@ -13,7 +13,7 @@
 	fix = commit --amend -C HEAD
 	st = status -sb
 [push]
-	default = simple
+	default = matching
 	followTags = true
 [diff]
 	tool = vimdiff
