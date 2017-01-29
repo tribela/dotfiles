@@ -78,6 +78,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+unsetopt autocd
+
 export EDITOR='vim'
 
 if [ -d "$HOME/.local/bin" ]; then
