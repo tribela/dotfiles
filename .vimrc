@@ -54,7 +54,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'ciaranm/detectindent'
 au BufRead * DetectIndent
 Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'jinja']} " HTML zencoding.
-let g:user_emmet_leader_key='<C-a>'
+let g:user_emmet_leader_key='<C-z>'
 Plug 'lepture/vim-jinja', {'for': ['html', 'jinja']}
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
