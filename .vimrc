@@ -46,6 +46,9 @@ Plug 'tpope/vim-surround'
 Plug 'toggle'
 Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'w0rp/ale' " Async lint engine
+nmap [x <Plug>(ale_previous_wrap)
+nmap ]x <Plug>(ale_next_wrap)
 Plug 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
