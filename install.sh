@@ -10,13 +10,15 @@ done
 
 \curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +PlugInstall +qall
 
-if hash nvim; then
+if hash nvim 2>/dev/null; then
     \curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    ln -sf $path/.vimrc ~/.config/nvim/init.vim
+    ln -sf $path/.vim/snippets ~/.config/nvim/snippets
+    nvim +PlugInstall +qall
 fi
-
-vim +PlugInstall +qall
 
 mkdir -p "$HOME/.local/bin"
 ln -sf $path/tmx $HOME/.local/bin/tmx

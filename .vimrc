@@ -58,13 +58,14 @@ let g:user_emmet_leader_key='<C-z>'
 Plug 'lepture/vim-jinja', {'for': ['html', 'jinja']}
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
-Plug 'davidhalter/jedi', {'for': 'python'}
 Plug 'nvie/vim-flake8', {'for': 'python'}
 
 " Snipmate
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 " End snipmate
 
 Plug 'nathanalderson/yang.vim', {'for': 'yang'}
@@ -76,8 +77,6 @@ if has('nvim')
 else
   Plug 'Shougo/neocomplete.vim'
   let g:neocomplete#enable_at_startup = 1
-  Plug 'Shougo/neosnippet'
-  Plug 'Shougo/neosnippet-snippets'
   Plug 'davidhalter/jedi-vim', {'for': 'python'}
 endif
 
