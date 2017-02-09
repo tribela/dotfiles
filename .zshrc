@@ -90,11 +90,6 @@ if [ -d "$HOME/.local/bin" ]; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
 
-if [[ -z $TMUX ]]; then
-    export TERM='xterm-256color'
-else
-    export TERM='screen-256color'
-fi
 
 # "resize" command for GUI term
 if [ ! -z "$XDG_CURRENT_DESKTOP" ]; then
