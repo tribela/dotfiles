@@ -80,6 +80,10 @@ source $ZSH/oh-my-zsh.sh
 
 unsetopt autocd
 
+if [ ! -z "$COLORTERM" ] && [[ "$TERM" != *"-256color" ]]; then
+    export TERM="${TERM}-256color"
+fi
+
 if hash nvim 2>/dev/null; then
     export EDITOR='nvim'
 else
