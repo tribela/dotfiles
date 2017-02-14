@@ -96,6 +96,15 @@ else
     export TERM='screen-256color'
 fi
 
+# "resize" command for GUI term
+if [ ! -z "$XDG_CURRENT_DESKTOP" ]; then
+    resize() {
+        local cols=$1
+        local lines=$2
+        printf "\e[8;${lines};${cols}t"
+    }
+fi
+
 if [[ -x $(which vcprompt) ]]; then
     export VCPROMPT_FORMAT='<%b%m%u> '
     alias git_prompt_info='vcprompt'
