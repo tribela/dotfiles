@@ -1,5 +1,4 @@
 set nocompatible
-colo desert
 se nu
 se ru
 se sw=4
@@ -49,9 +48,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale' " Async lint engine
 nmap [x <Plug>(ale_previous_wrap)
 nmap ]x <Plug>(ale_next_wrap)
-Plug 'altercation/vim-colors-solarized'
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
 Plug 'hachy/eva01.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'ciaranm/detectindent'
@@ -87,7 +83,12 @@ call plug#end()
 
 
 
-colo eva01
+if $COLORTERM != ''
+  colo eva01
+else
+  colo desert
+endif
+
 set list
 try
   set lcs=tab:↹\ ,trail:.,extends:>,precedes:<
