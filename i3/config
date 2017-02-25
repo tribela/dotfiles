@@ -43,9 +43,12 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym Mod1+k exec gnome-terminal --role floatingTerm
+for_window [window_role="floatingTerm"] floating enable
 
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym Mod1+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
