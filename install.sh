@@ -9,6 +9,7 @@ for file in ${files[@]}; do
 done
 
 ln -sf $path/i3 ~/.config/i3
+ln -sf $path/i3status ~/.config/i3status
 
 \curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
