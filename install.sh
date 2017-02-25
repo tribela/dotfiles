@@ -8,6 +8,8 @@ for file in ${files[@]}; do
     ln -sf $path/$file ~/$file
 done
 
+ln -sf $path/i3 ~/.config/i3
+
 \curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugInstall +qall
