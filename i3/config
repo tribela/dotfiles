@@ -28,6 +28,10 @@ font pango:monospace 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+#Windows          Border    Background    Text     Indicator
+client.focused    #8500ec   #8500ec   #ffffff
+client.unfocused  #333333   #333333   #ffffff
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -158,9 +162,13 @@ bar {
         status_command i3status
 }
 
+# Window setups
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+
 # Startup programs
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id ibus-daemon -rd
 exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id compton -f --config /home/kjwon15/.config/i3/compton.conf
+exec --no-startup-id conky -c ~/.config/conky/conky_theme
