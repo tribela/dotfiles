@@ -182,4 +182,4 @@ exec --no-startup-id ibus-daemon -rd
 exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id compton -f --config /home/kjwon15/.config/i3/compton.conf
-exec --no-startup-id conky -c ~/.config/conky/conky_theme
+exec --no-startup-id ~/.config/conky/start_conky
