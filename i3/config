@@ -161,5 +161,6 @@ bar {
 # Startup programs
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id ibus-daemon -rd
+exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id compton -f --config /home/kjwon15/.config/i3/compton.conf
