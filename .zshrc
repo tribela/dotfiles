@@ -168,3 +168,7 @@ fi
 export PATH="/usr/local/heroku/bin:$PATH"
 NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH"
+
+# allow locally installed npm binaries to be executed;
+# added by `npm i -g add-local-binaries-to-path`
+export PATH="$PATH:./node_modules/.bin"
