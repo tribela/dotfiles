@@ -42,7 +42,10 @@ nmap -builtin <up> <pass>
 nmap -builtin <down> <pass>
 
 set strictfocus=
-set strictfocus+=twitter.com:laissez-faire,'chrome:*':laissez-faire,*:moderate
+set strictfocus+=facebook.com:laissez-faire
+set strictfocus+=twitter.com:laissez-faire
+set strictfocus+='chrome:*':laissez-faire
+set strictfocus+=*:moderate
 
 group googlesearch -locations="https?://(www\.)?google\.([^/]+)/([^/]*)"
 nmap -builtin gi 1gi
@@ -60,6 +63,9 @@ nmap -builtin l <pass>
 nmap -builtin c <pass>
 nmap -builtin s <pass>
 nmap -builtin o <pass>
+" Navigate photos Vim style
+nmap -builtin h <C-v><left>
+nmap -builtin l <C-v><right>
 nmap -builtin <cr> <pass>
 imap <cr> <pass>
 group user
