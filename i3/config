@@ -198,6 +198,7 @@ for_window [class="Nitrogen"] floating enable sticky enable border normal
 
 # Startup programs
 exec --no-startup-id setxkbmap -option ctrl:nocaps
+exec --no-startup-id synclient HorizTwoFingerScroll=1 VertScrollDelta=-200 HorizScrollDelta=-200
 exec --no-startup-id ibus-daemon -rd
 exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
