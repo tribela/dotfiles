@@ -32,6 +32,7 @@ font pango:monospace 8
 client.focused    #8500ec   #8500ec   #ffffff
 client.unfocused  #333333   #333333   #ffffff
 
+# https://github.com/Airblader/i3
 for_window [class="^.*"] border pixel 1
 gaps inner 8
 gaps outer -5
