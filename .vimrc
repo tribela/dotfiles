@@ -67,6 +67,10 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 " End snipmate
 
+" Shell script lint.
+" Install shellcheck to use.
+Plug 'vim-syntastic/syntastic', {'for': 'sh'}
+
 Plug 'nathanalderson/yang.vim', {'for': 'yang'}
 
 if has('nvim')
