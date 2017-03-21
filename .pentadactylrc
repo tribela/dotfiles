@@ -101,4 +101,8 @@ se extendedhinttags+=[h]:[title]
 js hints.addMode('e', 'Focus input field', function(elem){dactyl.focus(elem);} );
 se extendedhinttags+=[e]:input:not([type=hidden]),textarea,button,[role=button],select,[contenteditable]
 
+" Tile Tab addon
+command! -nargs=? vs js (function(url){dactyl.execute(":emenu Tile.Tile New Tab.Right"); if (url) dactyl.execute(":open " + url)})("<args>")
+command! -nargs=? sp js (function(url){dactyl.execute(":emenu Tile.Tile New Tab.Below"); if (url) dactyl.execute(":open " + url)})("<args>")
+
 " vim: set ft=vim:
