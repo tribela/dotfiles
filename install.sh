@@ -13,14 +13,14 @@ ln -sf $path/i3status ~/.config/i3status
 
 \curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim +PlugInstall +qall
+vim +PlugUpgrade +PlugInstall +qall
 
 if hash nvim 2>/dev/null; then
     \curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     ln -sf $path/.vimrc ~/.config/nvim/init.vim
     ln -sf $path/.vim/snippets ~/.config/nvim/snippets
-    nvim +PlugInstall +qall
+    nvim +PlugUpgrade +PlugInstall +qall
 fi
 
 mkdir -p "$HOME/.local/bin"
