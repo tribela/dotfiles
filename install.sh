@@ -16,6 +16,7 @@ ln -sf $path/i3status ~/.config/i3status
 vim +PlugUpgrade +PlugInstall +qall
 
 if hash nvim 2>/dev/null; then
+    mkdir -p ~/.config/nvim
     \curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     ln -sf $path/.vimrc ~/.config/nvim/init.vim
