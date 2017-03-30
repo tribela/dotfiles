@@ -29,4 +29,4 @@ ln -sf $path/tmx $HOME/.local/bin/tmx
 
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-$HOME/.fzf/install
+$HOME/.fzf/install --all
