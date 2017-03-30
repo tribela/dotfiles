@@ -20,7 +20,7 @@ if hash nvim 2>/dev/null; then
     \curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     ln -sf $path/.vimrc ~/.config/nvim/init.vim
-    ln -sf $path/.vim/snippets ~/.config/nvim/snippets
+    [ ! -L !/.config/nvim/snippets ] && ln -sf $path/.vim/snippets ~/.config/nvim/snippets
     nvim +PlugUpgrade +PlugInstall +qall
 fi
 
