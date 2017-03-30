@@ -36,6 +36,11 @@ endif
 Plug 'kjwon15/vim-transparent'
 autocmd ColorScheme * silent! call background#clear_background()
 
+" Colorschemes
+Plug 'hachy/eva01.vim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'yous/vim-open-color'
+
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'  " gcc to comment
 autocmd FileType crontab setlocal commentstring=#\ %s
@@ -48,8 +53,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale' " Async lint engine
 nmap [x <Plug>(ale_previous_wrap)
 nmap ]x <Plug>(ale_next_wrap)
-Plug 'hachy/eva01.vim'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'ciaranm/detectindent'
 au BufRead * DetectIndent
 Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'jinja']} " HTML zencoding.
@@ -88,10 +91,10 @@ call plug#end()
 
 
 try
-  if $COLORTERM != ''
+  if getbufvar(winbufnr(0), '&t_Co') == 256
     colo eva01
   else
-    colo PaperColor
+    colo open-color
   endif
 catch /E185/
   colo desert
