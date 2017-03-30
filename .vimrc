@@ -34,7 +34,7 @@ else
 endif
 
 Plug 'kjwon15/vim-transparent'
-autocmd ColorScheme * call background#clear_background()
+autocmd ColorScheme * silent! call background#clear_background()
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'  " gcc to comment
@@ -87,11 +87,15 @@ call plug#end()
 
 
 
-if $COLORTERM != ''
-  colo eva01
-else
+try
+  if $COLORTERM != ''
+    colo eva01
+  else
+    colo PaperColor
+  endif
+catch /E185/
   colo desert
-endif
+endtry
 
 set list
 try
