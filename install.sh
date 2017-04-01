@@ -38,3 +38,6 @@ import compizconfig
 context = compizconfig.Context()
 context.Import('ccsm.profile')
 EOF
+
+# Map caps lock to additional ctrl key
+./caps.sh
