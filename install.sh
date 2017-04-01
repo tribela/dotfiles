@@ -5,11 +5,11 @@ cd $path
 files=('.bashrc' '.gitconfig' '.ideavimrc' '.pentadactylrc' '.tmux.conf' '.vim' '.vimrc' '.zshrc')
 
 for file in ${files[@]}; do
-    ln -sf $path/$file ~/$file
+    ln -sfT $path/$file ~/$file
 done
 
-ln -sf $path/i3 ~/.config/i3
-ln -sf $path/i3status ~/.config/i3status
+ln -sfT $path/i3 ~/.config/i3
+ln -sfT $path/i3status ~/.config/i3status
 
 \curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -20,7 +20,7 @@ if hash nvim 2>/dev/null; then
     \curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     ln -sf $path/.vimrc ~/.config/nvim/init.vim
-    [ ! -L ~/.config/nvim/snippets ] && ln -sf $path/.vim/snippets ~/.config/nvim/snippets
+     ln -sfT $path/.vim/snippets ~/.config/nvim/snippets
     nvim +PlugUpgrade +PlugInstall +qall
 fi
 
