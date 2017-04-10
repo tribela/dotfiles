@@ -36,6 +36,9 @@ endif
 Plug 'kjwon15/vim-transparent'
 autocmd ColorScheme * silent! call background#clear_background()
 
+" Tools
+Plug 'Chiel92/vim-autoformat' " Auto format uglified files
+
 " Colorschemes
 Plug 'hachy/eva01.vim'
 Plug 'NLKNguyen/papercolor-theme'
