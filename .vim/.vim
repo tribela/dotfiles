@@ -1,1 +1,0 @@
-/home/kjwon15/git/dotfiles/.vim
