@@ -168,6 +168,11 @@ nnoremap <silent><leader>/ :nohls<cr>
 "When syntax highlight malfunctioning
 nnoremap <silent><leader>' :syntax sync fromstart<cr>
 
+" System clipboard
+vnoremap <silent><leader>y "+y
+nnoremap <silent><leader>p "+p
+vnoremap <silent><leader>p "+p
+
 "insert one charactor
 nnoremap <leader><space> i_<esc>r
 "indent all of files
