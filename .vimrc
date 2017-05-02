@@ -49,6 +49,7 @@ Plug 'tpope/vim-commentary'  " gcc to comment
 autocmd FileType crontab setlocal commentstring=#\ %s
 autocmd FileType ia64 setlocal commentstring=;\ %s
 autocmd FileType nginx setlocal commentstring=#\ %s
+autocmd FIleType debsources setlocal commentstring=#\ %s
 Plug 'tpope/vim-surround'
 Plug 'toggle'
 Plug 'rking/ag.vim'
