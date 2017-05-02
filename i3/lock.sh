@@ -13,7 +13,7 @@ revert() {
 
 trap revert SIGINT SIGHUP SIGTERM
 
-xset +dpms dpms 5 5 5
+# xset +dpms dpms 5 5 5
 i3lock -n -c a939ff -i $here/lock.png &
 pid=$!
 sleep 1
