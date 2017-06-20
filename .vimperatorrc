@@ -1,0 +1,14 @@
+set hintchars=asdfg;lkjhweio
+set scroll=5
+nmap j <C-d>
+nmap k <C-u>
+
+highlight Hint font: bold 20px "Source Code Pro", "Ubuntu Mono Bold", monospace !important; margin: -.2ex; padding: 0 0 0 1px; outline: 1px solid rgba(0, 0, 0, .5); background: rgba(255, 248, 231, .8) !important; color: black !important;
+
+set nextpattern+='^다음','^older'
+set previouspattern+='^이전','^newer'
+
+" js hints.addMode('e', 'Focus input field', function(elem){dactyl.focus(elem);} );
+" se extendedhinttags+=[e]:input:not([type=hidden]),textarea,button,[role=button],select,[contenteditable]
+
+" vim: set ft=vim:
