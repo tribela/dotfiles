@@ -51,7 +51,6 @@ autocmd FileType ia64 setlocal commentstring=;\ %s
 autocmd FileType nginx setlocal commentstring=#\ %s
 autocmd FIleType debsources setlocal commentstring=#\ %s
 Plug 'tpope/vim-surround'
-Plug 'toggle'
 Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale' " Async lint engine
