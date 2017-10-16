@@ -15,9 +15,23 @@ else
     export PS1='\[\e[0;32m\]\u\[\e[m\]\[\e[39m\]@\[\e[36m\]\h:\[\e[33m\]\w\[\e[m\]\[\e[1;31m\]\$\[\e[m\] '
 fi
 
-
 [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
-hash virtualenvwrapper_lazy.sh 2>/dev/null && source $(which virtualenvwrapper_lazy.sh)
+
+# pyenv
+if [ -d $HOME/.pyenv/bin ]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
+
+# virtualenvwrapper
+if hash pyenv 2>/dev/null; then
+    pyenv virtualenvwrapper_lazy
+elif hash virtualenvwrapper_lazy.sh 2>/dev/null; then
+    export VIRTUALENVWRAPPER_SCRIPT=$(which virtualenvwrapper.sh)
+    source $(which virtualenvwrapper_lazy.sh)
+fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
