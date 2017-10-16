@@ -164,6 +164,17 @@ elif hash virtualenvwrapper_lazy.sh 2>/dev/null; then
     source $(which virtualenvwrapper_lazy.sh)
 fi
 
+
+# thefuck
+if hash thefuck; then
+  eval "$(thefuck --alias)"
+fi
+
+# direnv
+if hash direnv 2>/dev/null; then
+    eval "$(direnv hook zsh)"
+fi
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 NPM_PACKAGES="${HOME}/.npm-packages"
