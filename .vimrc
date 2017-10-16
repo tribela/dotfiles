@@ -58,9 +58,9 @@ nmap [x <Plug>(ale_previous_wrap)
 nmap ]x <Plug>(ale_next_wrap)
 Plug 'ciaranm/detectindent'
 au BufRead * DetectIndent
-Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'jinja']} " HTML zencoding.
+Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'jinja', 'jinja2']} " HTML zencoding.
 let g:user_emmet_leader_key='<C-z>'
-Plug 'lepture/vim-jinja', {'for': ['html', 'jinja']}
+Plug 'lepture/vim-jinja', {'for': ['html', 'jinja', 'jinja2']}
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'nvie/vim-flake8', {'for': 'python'}
