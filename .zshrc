@@ -166,7 +166,7 @@ fi
 
 
 # thefuck
-if hash thefuck; then
+if hash thefuck 2>/dev/null; then
   eval "$(thefuck --alias)"
 fi
 
@@ -177,7 +177,7 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-NPM_PACKAGES="${HOME}/.npm-packages"
+NPM_PACKAGES="${HOME}/.node_libraries"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 
 # allow locally installed npm binaries to be executed;
