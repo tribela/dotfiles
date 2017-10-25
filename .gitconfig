@@ -3,6 +3,7 @@
 	email = kjwonmail@gmail.com
 [core]
 	pager = less -FRX
+	excludesfile = /home/kjwon15/.gitignore
 [color]
 	ui = true
 [alias]
