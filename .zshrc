@@ -173,6 +173,7 @@ fi
 # direnv
 if hash direnv 2>/dev/null; then
     eval "$(direnv hook zsh)"
+    alias tmux='direnv exec / tmux'
 fi
 
 ### Added by the Heroku Toolbelt
