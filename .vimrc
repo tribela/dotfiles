@@ -28,6 +28,8 @@ set wildmenu
 filetype plugin indent on
 
 if has('nvim')
+  let g:python3_host_prog='/home/kjwon15/.pyenv/shims/python3'
+  let g:python_host_prog='/home/kjwon15/.pyenv/shims/python'
   call plug#begin('~/.config/nvim/plugged')
 else
   call plug#begin('~/.vim/plugged')
