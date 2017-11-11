@@ -25,6 +25,8 @@ elseif config.OS.isWindows
     set editor='notepad'
 end
 
+set defsearch=duckduckgo
+
 set passkeys+=mail.google.com:'`~!#*+-./<C-Down><C-s><Enter>?INU[]acefjklmnopqrsuvxyz',*a,*n,*r,*s,*t,*u,ga,gc,gd,gi,gl,gs,gt,yo
 set passkeys+=inbox.google.com:'!#./[]acefhijkmnopqrstuxyz<esc><left><right><S-p><S-a><S-r><S-b><S-m><S-esc><C-.><C-,><Enter><S-x>'
 set passkeys+=plus.google.com:jkonprl<Left><Right><Up><Down>
