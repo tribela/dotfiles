@@ -113,7 +113,6 @@ catch /E474/
 endtry
 
 au filetype python setlocal cc=80
-au filetype javascript setlocal sw=2 sts=2
 
 "Spell check
 au filetype gitcommit setlocal spell textwidth=72 | nnoremap <C-]> 1z=``
