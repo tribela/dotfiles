@@ -38,3 +38,6 @@ fi
 # allow locally installed npm binaries to be executed;
 # added by `npm i -g add-local-binaries-to-path`
 export PATH="$PATH:./node_modules/.bin"
+
+# added by travis gem
+[ -f /home/kjwon15/.travis/travis.sh ] && source /home/kjwon15/.travis/travis.sh
