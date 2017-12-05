@@ -176,6 +176,11 @@ if hash direnv 2>/dev/null; then
     alias tmux='direnv exec / tmux'
 fi
 
+#pipenv
+if hash pipenv 2>/dev/null; then
+  eval "$(pipenv --completion)"
+fi
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 NPM_PACKAGES="${HOME}/.node_libraries"
