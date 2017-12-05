@@ -64,7 +64,9 @@ Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'jinja', 'jinja2']} " HT
 let g:user_emmet_leader_key='<C-z>'
 Plug 'lepture/vim-jinja', {'for': ['html', 'jinja', 'jinja2']}
 Plug 'jiangmiao/auto-pairs'
-Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'  " All in one filetypes
+" Filetype
+autocmd filetype javascript setlocal cino=:0
 Plug 'nvie/vim-flake8', {'for': 'python'}
 
 " Snipmate
