@@ -105,7 +105,7 @@ if [ ! -z "$XDG_CURRENT_DESKTOP" ]; then
 fi
 
 if [[ -x $(which vcprompt) ]]; then
-    export VCPROMPT_FORMAT='<%b%m%u> '
+    export VCPROMPT_FORMAT='<%b%a%m%u> '
     alias git_prompt_info='vcprompt'
 fi
 if [[ -s /etc/zsh_command_not_found ]]; then
