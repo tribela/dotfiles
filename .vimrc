@@ -173,6 +173,7 @@ nnoremap <silent><leader>/ :nohls<cr>
 nnoremap <silent><leader>' :syntax sync fromstart<cr>
 
 " System clipboard
+nnoremap <silent><leader>y gg"+yG``
 vnoremap <silent><leader>y "+y
 nnoremap <silent><leader>p "+p
 vnoremap <silent><leader>p "+p
