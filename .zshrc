@@ -188,3 +188,6 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 
 # added by travis gem
 [ -f /home/kjwon15/.travis/travis.sh ] && source /home/kjwon15/.travis/travis.sh
+
+# Alias for damn flake8
+alias flake8="flake8 --append-config=$HOME/.config/flake8"
