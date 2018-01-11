@@ -68,6 +68,9 @@ Plug 'sheerun/vim-polyglot'  " All in one filetypes
 " Filetype
 autocmd filetype javascript setlocal cino=:0
 Plug 'nvie/vim-flake8', {'for': 'python'}
+Plug 'chaimleib/vim-renpy', {'for': 'renpy'}
+Plug 'vim-scripts/icalendar.vim', {'for': 'icalendar'}
+autocmd! BufRead,BufNewFile *.ics,*.ical setfiletype icalendar
 
 " Snipmate
 Plug 'MarcWeber/vim-addon-mw-utils'
