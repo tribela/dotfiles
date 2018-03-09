@@ -12,6 +12,7 @@ syntax on
 set noeol
 set backspace=indent,eol,start
 set nobackup
+set backupcopy=yes
 set hlsearch
 set incsearch " 순간검색
 set ignorecase
@@ -40,6 +41,7 @@ autocmd ColorScheme * silent! call background#clear_background()
 
 " Tools
 Plug 'Chiel92/vim-autoformat' " Auto format uglified files
+Plug 'taku-o/vim-toggle' " + to toggle value
 
 " Colorschemes
 Plug 'hachy/eva01.vim'
@@ -76,8 +78,12 @@ autocmd! BufRead,BufNewFile *.ics,*.ical setfiletype icalendar
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
+Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
+" Plug 'Shougo/neosnippet-snippets'
+let g:neosnippet#enable_snipmate_compatibility = 1
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 " End snipmate
 
 " Shell script lint.
@@ -199,7 +205,7 @@ else
   au FileType c setlocal makeprg=gcc\ -o\ %<\ %
     au FileType python setlocal makeprg=python\ -i\ %
 endif
-au FileType html setlocal sw=2
+au FileType html setlocal sw=2 sts=2
 
 
 " set cursor to the last worked line
