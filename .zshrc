@@ -155,7 +155,7 @@ if [ -d "$HOME/.rbenv/bin" ]; then
 fi
 
 # Virtualenv wrapper
-if hash pyenv 2>/dev/null; then
+if [ -d "$HOME/.pyenv" ]; then
     pyenv virtualenvwrapper_lazy
 elif hash virtualenvwrapper_lazy.sh 2>/dev/null; then
     # export VIRTUALENVWRAPPER_SCRIPT="$HOME/.local/bin/virtualenvwrapper.sh"
@@ -164,22 +164,9 @@ elif hash virtualenvwrapper_lazy.sh 2>/dev/null; then
     source $(which virtualenvwrapper_lazy.sh)
 fi
 
-
-# thefuck
-if hash thefuck 2>/dev/null; then
-  eval "$(thefuck --alias)"
-fi
-
 # direnv
-if hash direnv 2>/dev/null; then
-    eval "$(direnv hook zsh)"
-    alias tmux='direnv exec / tmux'
-fi
-
-#pipenv
-if hash pipenv 2>/dev/null; then
-  eval "$(pipenv --completion)"
-fi
+eval "$(direnv hook zsh)"
+alias tmux='direnv exec / tmux'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -189,5 +176,17 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 # added by travis gem
 [ -f /home/kjwon15/.travis/travis.sh ] && source /home/kjwon15/.travis/travis.sh
 
+# linuxbrew
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+
 # Alias for damn flake8
 alias flake8="flake8 --append-config=$HOME/.config/flake8"
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion"  ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+

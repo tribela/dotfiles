@@ -74,13 +74,17 @@ Plug 'chaimleib/vim-renpy', {'for': 'renpy'}
 Plug 'vim-scripts/icalendar.vim', {'for': 'icalendar'}
 autocmd! BufRead,BufNewFile *.ics,*.ical setfiletype icalendar
 
+"Vimdeck
+Plug 'vim-scripts/SyntaxRange'
+Plug 'vim-scripts/ingo-library'
+
 " Snipmate
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neosnippet'
-" Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neosnippet-snippets'
 let g:neosnippet#enable_snipmate_compatibility = 1
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
