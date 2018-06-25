@@ -178,16 +178,19 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 [ -f /home/kjwon15/.travis/travis.sh ] && source /home/kjwon15/.travis/travis.sh
 
 # linuxbrew
-export PATH="$HOME/.linuxbrew/bin:$PATH"
+export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
 
 # Alias for damn flake8
 alias flake8="flake8 --append-config=$HOME/.config/flake8"
 
 # NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion"  ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [ -s "$HOME/.nvm/nvm.sh" ]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/bash_completion"  ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    for command in {nvm,node,npm}; do
+        alias $command="unalias nvm node npm && \. $NVM_DIR/nvm.sh && $command"  # This loads nvm
+    done
+fi
 
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
