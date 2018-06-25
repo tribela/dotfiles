@@ -108,8 +108,6 @@ endif
 
 call plug#end()
 
-" enter directory follwed by chdir
-autocmd FileType netrw map <buffer> <cr> :<c-u>call netrw#LocalBrowseCheck(<SNR>64_NetrwBrowseChdir(1,<SNR>64_NetrwGetWord()))<cr>c
 
 try
   if getbufvar(winbufnr(0), '&t_Co') == 256
