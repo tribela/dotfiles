@@ -141,6 +141,9 @@ host_color="[38;2;$(get_rgb $(hostname))m"
 export PS1='%{${username_color}%}%n%{${reset_color}%}@%{${host_color}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# linuxbrew
+export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
+
 # Pyenv
 if [ -d $HOME/.pyenv/bin ]; then
     export PATH=$HOME/.pyenv/bin:$PATH
@@ -176,9 +179,6 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 
 # added by travis gem
 [ -f /home/kjwon15/.travis/travis.sh ] && source /home/kjwon15/.travis/travis.sh
-
-# linuxbrew
-export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
 
 # Alias for damn flake8
 alias flake8="flake8 --append-config=$HOME/.config/flake8"
