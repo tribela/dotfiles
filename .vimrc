@@ -1,12 +1,12 @@
 set nocompatible
-se nu
-se ru
-se sw=4
-se sts=4
-se ts=8
-se et
-se ai
-se cin
+set nu
+set ru
+set sw=4
+set sts=4
+set ts=8
+set et
+set ai
+set cin
 set smartindent
 syntax on
 set noeol
@@ -27,6 +27,10 @@ set autochdir
 set showcmd
 set wildmenu
 filetype plugin indent on
+
+if has('nvim')
+  set inccommand=nosplit " Preview substitute
+endif
 
 if has('nvim')
   let g:python3_host_prog='/home/kjwon15/.pyenv/shims/python3'
@@ -62,6 +66,7 @@ nmap [x <Plug>(ale_previous_wrap)
 nmap ]x <Plug>(ale_next_wrap)
 Plug 'ciaranm/detectindent'
 au BufRead * DetectIndent
+Plug 'markonm/traces.vim' " Preview substitute
 Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'jinja', 'jinja2']} " HTML zencoding.
 let g:user_emmet_leader_key='<C-z>'
 Plug 'lepture/vim-jinja', {'for': ['html', 'jinja', 'jinja2']}
@@ -168,12 +173,6 @@ vnoremap L $
 
 "Force saving root permimssion file
 cnoremap w!! %!sudo tee > /dev/null %
-
-"Regex search
-nnoremap / /\v
-vnoremap / /\v
-cnoremap %s/ %smagic/
-cnoremap \>s/ \>magic/
 
 " Insert timestamp
 inoremap <C-e> <C-r>=strftime("%Y-%m-%d %H:%M:%S %z")<cr>
