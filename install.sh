@@ -2,7 +2,7 @@
 path=$(dirname "$(readlink -e "$0")")
 cd "$path" || true
 
-files=('.bashrc' '.gitconfig' '.ideavimrc' '.pentadactylrc' '.vimperatorrc' '.tmux.conf' '.vim' '.vimrc' '.zshrc' '.npmrc' '.sqliterc')
+files=('.bashrc' '.gitconfig' '.ideavimrc' '.pentadactylrc' '.vimperatorrc' '.tmux.conf' '.vim' '.vimrc' '.zshrc' '.zprofile' '.npmrc' '.sqliterc')
 
 for file in "${files[@]}"; do
     ln -sfT "$path/$file" "$HOME/$file"
