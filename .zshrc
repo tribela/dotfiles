@@ -145,27 +145,29 @@ export PS1='%{${username_color}%}%n%{${reset_color}%}@%{${host_color}%}%m%{${fg_
 export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
 
 # Pyenv
-if [ -d $HOME/.pyenv/bin ]; then
+if ! which pyenv &>/dev/null && [ -d "$HOME/.pyenv/bin" ]; then
     export PATH=$HOME/.pyenv/bin:$PATH
+fi
+if which pyenv &>/dev/null; then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
     source "$(pyenv root)/completions/pyenv.zsh"
 fi
 
-# Rbenv
-if [ -d "$HOME/.rbenv/bin" ]; then
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-fi
-
 # Virtualenv wrapper
-if [ -d "$HOME/.pyenv" ]; then
+if which pyenv &>/dev/null; then
     pyenv virtualenvwrapper_lazy
 elif hash virtualenvwrapper_lazy.sh 2>/dev/null; then
     # export VIRTUALENVWRAPPER_SCRIPT="$HOME/.local/bin/virtualenvwrapper.sh"
     # source ~/.local/bin/virtualenvwrapper_lazy.sh
     export VIRTUALENVWRAPPER_SCRIPT=$(which virtualenvwrapper.sh)
     source $(which virtualenvwrapper_lazy.sh)
+fi
+
+# Rbenv
+if [ -d "$HOME/.rbenv/bin" ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
 fi
 
 # direnv
