@@ -35,8 +35,10 @@ if [ -d "$HOME/.rbenv/bin" ]; then
 fi
 
 # direnv
-eval "$(direnv hook zsh)"
-alias tmux='direnv exec / tmux'
+if hash direnv &>/dev/null; then
+    eval "$(direnv hook zsh)"
+    alias tmux='direnv exec / tmux'
+fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
