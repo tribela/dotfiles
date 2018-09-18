@@ -28,6 +28,9 @@ set showcmd
 set wildmenu
 filetype plugin indent on
 
+" Use autocmd because just set is overwrited
+autocmd! Filetype * setlocal formatoptions-=o " disable autocomment on o/O
+
 if has('nvim')
   set inccommand=nosplit " Preview substitute
 endif
@@ -67,6 +70,7 @@ nmap ]x <Plug>(ale_next_wrap)
 Plug 'ciaranm/detectindent'
 au BufRead * DetectIndent
 Plug 'markonm/traces.vim' " Preview substitute
+Plug 'kshenoy/vim-signature' " SignColumn marker
 Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'jinja', 'jinja2']} " HTML zencoding.
 let g:user_emmet_leader_key='<C-z>'
 Plug 'lepture/vim-jinja', {'for': ['html', 'jinja', 'jinja2']}
@@ -74,6 +78,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'  " All in one filetypes
 " Filetype
 autocmd filetype javascript setlocal cino=:0
+autocmd filetype ruby setlocal sw=2 sts=2
 Plug 'nvie/vim-flake8', {'for': 'python'}
 Plug 'chaimleib/vim-renpy', {'for': 'renpy'}
 Plug 'vim-scripts/icalendar.vim', {'for': 'icalendar'}
