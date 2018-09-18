@@ -35,7 +35,7 @@ if [ -d "$HOME/.rbenv/bin" ]; then
 fi
 
 # direnv
-if hash direnv &>/dev/null; then
+if which direnv &>/dev/null; then
     eval "$(direnv hook zsh)"
     alias tmux='direnv exec / tmux'
 fi
@@ -58,6 +58,11 @@ if [ -s "$HOME/.nvm/nvm.sh" ]; then
     for command in {nvm,node,npm}; do
         alias $command="unalias nvm node npm && \. $NVM_DIR/nvm.sh && $command"  # This loads nvm
     done
+fi
+
+# ccache
+if [ -d /usr/lib/ccache ]; then
+    export PATH=/usr/lib/ccache:$PATH
 fi
 
 
