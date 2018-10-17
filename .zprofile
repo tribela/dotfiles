@@ -1,4 +1,3 @@
-export HISTFILE=/dev/shm/.${USER}_zsh_history
 # export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
@@ -14,18 +13,20 @@ if ! which pyenv &>/dev/null && [ -d "$HOME/.pyenv/bin" ]; then
 fi
 if which pyenv &>/dev/null; then
     eval "$(pyenv init -)"
-    # eval "$(pyenv virtualenv-init -)"
+    eval "$(pyenv virtualenv-init -)"
     source "$(pyenv root)/completions/pyenv.zsh"
 fi
 
 # Virtualenv wrapper
-if which pyenv &>/dev/null; then
-    pyenv virtualenvwrapper_lazy
-elif hash virtualenvwrapper_lazy.sh 2>/dev/null; then
-    # export VIRTUALENVWRAPPER_SCRIPT="$HOME/.local/bin/virtualenvwrapper.sh"
-    # source ~/.local/bin/virtualenvwrapper_lazy.sh
-    export VIRTUALENVWRAPPER_SCRIPT=$(which virtualenvwrapper.sh)
-    source $(which virtualenvwrapper_lazy.sh)
+if ! which mktmpenv &>/dev/null; then
+    if which pyenv &>/dev/null; then
+        pyenv virtualenvwrapper_lazy
+    elif which virtualenvwrapper_lazy.sh &>/dev/null; then
+        # export VIRTUALENVWRAPPER_SCRIPT="$HOME/.local/bin/virtualenvwrapper.sh"
+        # source ~/.local/bin/virtualenvwrapper_lazy.sh
+        export VIRTUALENVWRAPPER_SCRIPT=$(which virtualenvwrapper.sh)
+        source $(which virtualenvwrapper_lazy.sh)
+    fi
 fi
 
 # Rbenv
@@ -39,11 +40,6 @@ if which direnv &>/dev/null; then
     eval "$(direnv hook zsh)"
     alias tmux='direnv exec / tmux'
 fi
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-NPM_PACKAGES="${HOME}/.node_libraries"
-export PATH="$NPM_PACKAGES/bin:$PATH"
 
 # added by travis gem
 [ -f /home/kjwon15/.travis/travis.sh ] && source /home/kjwon15/.travis/travis.sh
