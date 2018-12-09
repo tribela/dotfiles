@@ -48,6 +48,7 @@ autocmd ColorScheme * silent! call background#clear_background()
 
 " Tools
 Plug 'Chiel92/vim-autoformat' " Auto format uglified files
+let g:formatterpath=[$HOME.'/.yarn/bin', $HOME.'/.local/bin']
 Plug 'taku-o/vim-toggle' " + to toggle value
 
 " Colorschemes
