@@ -2,14 +2,11 @@
 path=$(dirname "$(readlink -e "$0")")
 cd "$path" || true
 
-files=('.bashrc' '.gitconfig' '.ideavimrc' '.pentadactylrc' '.vimperatorrc' '.tmux.conf' '.vim' '.vimrc' '.zshrc' '.zprofile' '.npmrc' '.sqliterc')
+files=('.bashrc' '.gitconfig' '.ideavimrc' '.tmux.conf' '.vim' '.vimrc' '.zshrc' '.zprofile' '.npmrc' '.sqliterc')
 
 for file in "${files[@]}"; do
     ln -sfT "$path/$file" "$HOME/$file"
 done
-
-ln -sfT "$path/i3 ~/.config/i3"
-ln -sfT "$path/i3status" ~/.config/i3status
 
 'curl' -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
