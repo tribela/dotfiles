@@ -217,9 +217,9 @@ au FileType html setlocal sw=2 sts=2
 
 
 " set cursor to the last worked line
-set viewoptions=cursor
-au BufWinLeave *.c,*.cc,*.h,*.html,*.php,Makefile,*.py,*.sh mkview
-au BufWinEnter *.c,*.cc,*.h,*.html,*.php,Makefile,*.py,*.sh loadview
+" set viewoptions=cursor
+au BufWinLeave ?* mkview
+au BufWinEnter ?* silent loadview
 " ---
 
 if has("gui_running")
