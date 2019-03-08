@@ -105,8 +105,6 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 " Install shellcheck to use.
 Plug 'vim-syntastic/syntastic', {'for': 'sh'}
 
-Plug 'nathanalderson/yang.vim', {'for': 'yang'}
-
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   let g:deoplete#enable_at_startup = 1
