@@ -122,21 +122,32 @@ get_rgb() {
     local degree=$(($n % 360))
     local x=$((255 - $(abs $((${degree} * 255 / 60 % (255*2) - 255)) ) ))
     if [ $degree -lt 60 ]; then
-        echo "255;$x;0"
+        echo -n "255;$x;0"
     elif [ $degree -lt 120 ]; then
-        echo "$x;255;0"
+        echo -n "$x;255;0"
     elif [ $degree -lt 180 ]; then
-        echo "0;255;$x"
+        echo -n "0;255;$x"
     elif [ $degree -lt 240 ]; then
-        echo "0;$x;255"
+        echo -n "0;$x;255"
     elif [ $degree -lt 300 ]; then
-        echo "$x;0;255"
+        echo -n "$x;0;255"
     elif [ $degree -lt 360 ]; then
-        echo "255;0;$x"
+        echo -n "255;0;$x"
     fi
 }
 
-username_color="[38;2;$(get_rgb $USER)m"
-host_color="[38;2;$(get_rgb $(hostname))m"
+get_255() {
+    n=$(md5sum <<< $1)
+    n=$((0x${n:0:12}))
+    echo -n "$(($n % 255))"
+}
+
+if [[ "$TERM" = "screen."* ]]; then
+    username_color="[38;5;$(get_255 $USER)m"
+    host_color="[38;5;$(get_255 $(hostname))m"
+else
+    username_color="[38;2;$(get_rgb $USER)m"
+    host_color="[38;2;$(get_rgb $(hostname))m"
+fi
 export PS1='%{${username_color}%}%n%{${reset_color}%}@%{${host_color}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
