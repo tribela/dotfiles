@@ -61,10 +61,11 @@ Plug 'tpope/vim-commentary'  " gcc to comment
 autocmd FileType crontab setlocal commentstring=#\ %s
 autocmd FileType ia64 setlocal commentstring=;\ %s
 autocmd FileType nginx setlocal commentstring=#\ %s
-autocmd FIleType debsources setlocal commentstring=#\ %s
+autocmd FileType debsources setlocal commentstring=#\ %s
 Plug 'tpope/vim-surround'
 Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
+let g:gitgutter_async = 0
 Plug 'w0rp/ale' " Async lint engine
 nmap [x <Plug>(ale_previous_wrap)
 nmap ]x <Plug>(ale_next_wrap)
@@ -215,10 +216,11 @@ au FileType html setlocal sw=2 sts=2
 
 
 " set cursor to the last worked line
-" set viewoptions=cursor
+set viewoptions=cursor
 au BufWinLeave ?* mkview
-au BufWinEnter ?* silent loadview
+au BufWinEnter ?* silent! loadview
 " ---
+
 
 if has("gui_running")
     colo PaperColor
