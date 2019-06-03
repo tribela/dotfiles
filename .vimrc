@@ -73,6 +73,7 @@ Plug 'ciaranm/detectindent'
 au BufRead * DetectIndent
 Plug 'markonm/traces.vim' " Preview substitute
 Plug 'kshenoy/vim-signature' " SignColumn marker
+Plug 'ap/vim-css-color', { 'for': ['css', 'scss', 'sass'] } " Preview css colour
 Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'jinja', 'jinja2']} " HTML zencoding.
 let g:user_emmet_leader_key='<C-z>'
 Plug 'lepture/vim-jinja', {'for': ['html', 'jinja', 'jinja2']}
