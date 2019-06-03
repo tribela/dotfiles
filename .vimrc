@@ -148,7 +148,7 @@ set spelllang+=cjk
 "Scroll before edge
 set scrolloff=10
 
-set fencs=utf-8,utf-16le,cp437,cp949,euc-kr
+set fencs=utf-8
 
 
 map <C-S> :w<cr>
@@ -218,8 +218,8 @@ au FileType html setlocal sw=2 sts=2
 
 " set cursor to the last worked line
 set viewoptions=cursor
-au BufWinLeave ?* mkview
-au BufWinEnter ?* silent! loadview
+au BufWinLeave *.* mkview
+au BufWinEnter *.* silent! loadview
 " ---
 
 
