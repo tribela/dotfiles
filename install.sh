@@ -8,6 +8,11 @@ for file in "${files[@]}"; do
     ln -sfT "$path/$file" "$HOME/$file"
 done
 
+if [ -e "$path/tridactylrc" ]; then
+    mkdir -p "$HOME/.config/tridactyl"
+    ln -sfT "$path/tridactylrc" "$HOME/.config/tridactyl/tridactylrc"
+fi
+
 'curl' -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugUpgrade +PlugInstall +qall

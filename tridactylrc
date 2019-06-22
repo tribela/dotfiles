@@ -1,0 +1,28 @@
+unbind --mode normal <F1>
+
+set hintchars asdf;lkjewio
+
+" better find mode
+bind / fillcmdline find
+bind ? fillcmdling find -?
+bind n findnext 1
+bind N findnext -1
+bind ,<space> nohlsearch
+
+" search urls
+set searchurls.dic http://dic.naver.com/?query=%s
+set searchurls.tr https://translate.google.com/#view=home&op=translate&sl=%s1&tl=%s2&text=%s3
+
+" change link hint mode
+bindurl www.google.com f hint -Jc .rc > .r > a
+bindurl www.google.com F hint -Jtc .rc > .r > a
+
+bindurl duckduckgo.com f hint -Jc a.result__a
+bindurl duckduckgo.com F hint -Jtc a.result__a
+
+" Ignore on these urls
+bindurl gmail.com mode ignore
+bindurl qdon.space mode ignore
+
+
+" vim: set filetype=vim:
