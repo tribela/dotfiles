@@ -27,8 +27,8 @@ bindurl duckduckgo.com f hint -Jc a.result__a
 bindurl duckduckgo.com F hint -Jtc a.result__a
 
 " Ignore on these urls
-bindurl gmail.com mode ignore
-bindurl qdon.space mode ignore
+autocmd DocStart ^https://qdon\.space/ mode ignore
+autocmd DocStart ^https://mail\.google\.com/ mode ignore
 
 
 " vim: set filetype=vim:
