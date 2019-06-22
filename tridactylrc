@@ -1,6 +1,12 @@
 unbind --mode normal <F1>
 
 set hintchars asdf;lkjewio
+set homepages ["duckduckgo.com"]
+
+set modeindicatorshowkeys true
+set newtab about:blank
+set newtabfocus urlbar
+set colors shydactyl
 
 " better find mode
 bind / fillcmdline find
