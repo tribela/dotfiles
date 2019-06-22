@@ -1,6 +1,8 @@
 unbind --mode normal <F1>
 
 set hintchars asdf;lkjewio
+set hintfiltermode vimperator-reflow
+set hintuppercase false
 set homepages ["duckduckgo.com"]
 
 set modeindicatorshowkeys true
@@ -15,6 +17,12 @@ bind n findnext 1
 bind N findnext -1
 bind ,<space> nohlsearch
 
+bind ;f hint -t " Open in new tab and switch to it
+" Open context menu
+command hint_focus hint -;
+bind ;c composite hint_focus; !s xdotool key Menu
+bind ;e hint -c input
+
 " search urls
 set searchurls.dic http://dic.naver.com/?query=%s
 set searchurls.tr https://translate.google.com/#view=home&op=translate&sl=%s1&tl=%s2&text=%s3
@@ -23,12 +31,20 @@ set searchurls.tr https://translate.google.com/#view=home&op=translate&sl=%s1&tl
 bindurl www.google.com f hint -Jc .rc > .r > a
 bindurl www.google.com F hint -Jtc .rc > .r > a
 
+bindurl www.youtube.com f hint -Jc a.yt-simple-endpoint
+bindurl www.youtube.com F hint -Jtc a#endpoint, a#video-title
+
 bindurl duckduckgo.com f hint -Jc a.result__a
 bindurl duckduckgo.com F hint -Jtc a.result__a
 
 " Ignore on these urls
-autocmd DocStart ^https://qdon\.space/ mode ignore
-autocmd DocStart ^https://mail\.google\.com/ mode ignore
+" mastodon
+autocmd DocStart ^https://[^/]+/web/ mode ignore
+autocmd DocStart https://mail.google.com/ mode ignore
+
+unbindurl youtube\.com/watch j
+unbindurl youtube\.com/watch k
+unbindurl youtube\.com/watch l
 
 
 " vim: set filetype=vim:
