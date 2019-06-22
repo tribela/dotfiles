@@ -8,7 +8,7 @@ set homepages ["duckduckgo.com"]
 set modeindicatorshowkeys true
 set newtab about:blank
 set newtabfocus urlbar
-set colors shydactyl
+colors dark
 
 " better find mode
 bind / fillcmdline find
