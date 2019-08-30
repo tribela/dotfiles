@@ -1,4 +1,5 @@
-unbind --mode normal <F1>
+unbind --mode=normal <F1>
+unbind --mode=normal <esc>
 
 set hintchars asdf;lkjewio
 set hintfiltermode vimperator-reflow
@@ -39,6 +40,7 @@ bindurl duckduckgo.com F hint -Jtc a.result__a
 
 " Ignore on these urls
 " mastodon
+autocmd TabEnter ^https://[^/]+/web/ mode ignore
 autocmd DocStart ^https://[^/]+/web/ mode ignore
 autocmd DocStart https://mail.google.com/ mode ignore
 
