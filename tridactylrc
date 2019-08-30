@@ -13,7 +13,7 @@ colors dark
 
 " better find mode
 bind / fillcmdline find
-bind ? fillcmdling find -?
+bind ? fillcmdline find -?
 bind n findnext 1
 bind N findnext -1
 bind ,<space> nohlsearch
