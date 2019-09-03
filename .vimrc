@@ -111,13 +111,15 @@ Plug 'vim-syntastic/syntastic', {'for': 'sh'}
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  let g:deoplete#enable_at_startup = 1
-  Plug 'zchee/deoplete-jedi', {'for': 'python'}
 else
-  Plug 'Shougo/neocomplete.vim'
-  let g:neocomplete#enable_at_startup = 1
-  Plug 'davidhalter/jedi-vim', {'for': 'python'}
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 150
+Plug 'zchee/deoplete-jedi', {'for': 'python'}
+Plug 'deoplete-plugins/deoplete-clang', {'for': ['c', 'cpp']}
 
 call plug#end()
 
