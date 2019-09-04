@@ -63,6 +63,7 @@ autocmd FileType ia64 setlocal commentstring=;\ %s
 autocmd FileType nginx setlocal commentstring=#\ %s
 autocmd FileType debsources setlocal commentstring=#\ %s
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
 let g:gitgutter_async = 0
@@ -168,8 +169,8 @@ imap <C-H> <esc><C-W><i
 imap <C-L> <esc><C-W>>i
 
 "Up and Down for wrapped lines
-nnoremap j gj
-nnoremap k gk
+" nnoremap j gj
+" nnoremap k gk
 
 "Up and Down key for scroll
 nnoremap <up> <C-y>
