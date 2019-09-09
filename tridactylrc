@@ -1,3 +1,4 @@
+" run :nativeinstall to enable this config file
 unbind --mode=normal <F1>
 unbind --mode=normal <esc>
 
