@@ -43,7 +43,9 @@ bindurl duckduckgo.com F hint -Jtc a.result__a
 " mastodon
 autocmd TabEnter ^https://[^/]+/web/ mode ignore
 autocmd DocStart ^https://[^/]+/web/ mode ignore
+autocmd TabEnter https://mail.google.com/ mode ignore
 autocmd DocStart https://mail.google.com/ mode ignore
+autocmd TabEnter https://twitch.tv/ mode ignore
 
 unbindurl youtube\.com/watch j
 unbindurl youtube\.com/watch k
