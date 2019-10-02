@@ -36,8 +36,8 @@ if has('nvim')
 endif
 
 if has('nvim')
-  let g:python3_host_prog='/home/kjwon15/.pyenv/shims/python3'
-  let g:python_host_prog='/home/kjwon15/.pyenv/shims/python'
+  let g:python3_host_prog=$HOME.'/.pyenv/shims/python3'
+  let g:python_host_prog='/usr/bin/python2'
   call plug#begin('~/.config/nvim/plugged')
 else
   call plug#begin('~/.vim/plugged')
