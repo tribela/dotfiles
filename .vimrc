@@ -74,9 +74,7 @@ Plug 'ciaranm/detectindent'
 au BufRead * DetectIndent
 Plug 'markonm/traces.vim' " Preview substitute
 Plug 'kshenoy/vim-signature' " SignColumn marker
-Plug 'RRethy/vim-hexokinase' " for color preview
-let g:Hexokinase_refreshEvents = ['TextChanged', 'TextChangedI']
-let g:Hexokinase_ftAutoload = ['css', 'scss', 'xml']
+Plug 'ap/vim-css-color'
 Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'jinja', 'jinja2']} " HTML zencoding.
 let g:user_emmet_leader_key='<C-z>'
 Plug 'lepture/vim-jinja', {'for': ['html', 'jinja', 'jinja2']}
@@ -227,7 +225,7 @@ au BufWinLeave *.* mkview
 au BufWinEnter *.* silent! loadview
 " ---
 
-if has("termguicolors")     " set true colors
+if has("termguicolors") && has("nvim")     " set true colors
   set t_8f=[38;2;%lu;%lu;%lum
   set t_8b=[48;2;%lu;%lu;%lum
   set termguicolors
