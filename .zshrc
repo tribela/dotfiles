@@ -206,6 +206,11 @@ if [ -d /usr/lib/ccache ]; then
     export PATH=/usr/lib/ccache:$PATH
 fi
 
+# brew
+test -d $HOME/.linuxbrew && eval $($HOME/.linuxbrew/bin/brew shellenv)
+test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $($(brew --prefix)/bin/brew shellenv)
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Sanitise path
