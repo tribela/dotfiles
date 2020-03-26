@@ -58,6 +58,8 @@ Plug 'yous/vim-open-color'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'  " gcc to comment
+autocmd FileType cpp setlocal commentstring=//\ %s
+autocmd FileType c setlocal commentstring=//\ %s
 autocmd FileType crontab setlocal commentstring=#\ %s
 autocmd FileType ia64 setlocal commentstring=;\ %s
 autocmd FileType nginx setlocal commentstring=#\ %s
@@ -70,6 +72,7 @@ let g:gitgutter_async = 0
 Plug 'w0rp/ale' " Async lint engine
 nmap [x <Plug>(ale_previous_wrap)
 nmap ]x <Plug>(ale_next_wrap)
+au FileType python let b:ale_linters = ['flake8']
 Plug 'ciaranm/detectindent'
 au BufRead * DetectIndent
 Plug 'markonm/traces.vim' " Preview substitute
@@ -78,7 +81,7 @@ Plug 'ap/vim-css-color'
 Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'jinja', 'jinja2']} " HTML zencoding.
 let g:user_emmet_leader_key='<C-z>'
 Plug 'lepture/vim-jinja', {'for': ['html', 'jinja', 'jinja2']}
-Plug 'jiangmiao/auto-pairs'
+Plug 'kjwon15/auto-pairs'
 Plug 'sheerun/vim-polyglot'  " All in one filetypes
 " Filetype
 autocmd filetype javascript setlocal cino=:0
