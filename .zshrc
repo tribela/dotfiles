@@ -152,6 +152,11 @@ fi
 
 export PS1='%{${username_color}%}%n%{${reset_color}%}@%{${host_color}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
 
+# brew
+test -d $HOME/.linuxbrew && eval $($HOME/.linuxbrew/bin/brew shellenv)
+test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $($(brew --prefix)/bin/brew shellenv)
+
 # Pyenv
 if ! which pyenv &>/dev/null && [ -d "$HOME/.pyenv/bin" ]; then
     export PATH=$HOME/.pyenv/bin:$PATH
@@ -205,11 +210,6 @@ fi
 if [ -d /usr/lib/ccache ]; then
     export PATH=/usr/lib/ccache:$PATH
 fi
-
-# brew
-test -d $HOME/.linuxbrew && eval $($HOME/.linuxbrew/bin/brew shellenv)
-test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-eval $($(brew --prefix)/bin/brew shellenv)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
