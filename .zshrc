@@ -104,6 +104,10 @@ if [ ! -z "$XDG_CURRENT_DESKTOP" ]; then
     }
 fi
 
+if [ -d "$HOME/.cargo/bin" ]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 if [[ -x $(which vcprompt) ]]; then
     export VCPROMPT_FORMAT='<%b%a%m%u> '
     alias git_prompt_info='vcprompt'
@@ -152,6 +156,12 @@ fi
 
 export PS1='%{${username_color}%}%n%{${reset_color}%}@%{${host_color}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
 
+# Vim vs Nvim
+if which nvim &>/dev/null; then
+    alias vim=nvim
+    export EDITOR=nvim
+fi
+
 # brew
 test -d $HOME/.linuxbrew && eval $($HOME/.linuxbrew/bin/brew shellenv)
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
@@ -182,6 +192,8 @@ fi
 # Rbenv
 if [ -d "$HOME/.rbenv/bin" ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
+fi
+if hash rbenv &>/dev/null; then
     eval "$(rbenv init -)"
 fi
 
@@ -213,5 +225,8 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /home/kjwon15/.local/bin/mc mc
+
 # Sanitise path
-export PATH=${$(echo $PATH | tr : '\n' | cat -n | sort -u -k2 | sort -gk1 | awk -c '{print $2}' | tr '\n' :)%:}
+export PATH=${$(echo $PATH | tr : '\n' | cat -n | sort -u -k2 | sort -gk1 | awk '{print $2}' | tr '\n' :)%:}
