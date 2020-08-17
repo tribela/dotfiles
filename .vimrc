@@ -191,16 +191,17 @@ cnoremap w!! %!sudo tee > /dev/null %
 inoremap <C-e> <C-r>=strftime("%Y-%m-%d %H:%M:%S %z")<cr>
 
 map <space> <leader>
+let mapleader=' '
 "Clear search highlights
-nnoremap <silent><leader>/ :nohls<cr>
+nnoremap <leader>/ :nohls<cr>
 "When syntax highlight malfunctioning
-nnoremap <silent><leader>' :syntax sync fromstart<cr>
+nnoremap <leader>' :syntax sync fromstart<cr>
 
 " System clipboard
-nnoremap <silent><leader>y gg"+yG``
-vnoremap <silent><leader>y "+y
-nnoremap <silent><leader>p "+p
-vnoremap <silent><leader>p "+p
+nnoremap <leader>y gg"+yG``
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
 
 "insert one charactor
 nnoremap <leader><space> i_<esc>r

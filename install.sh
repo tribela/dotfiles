@@ -38,5 +38,5 @@ git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 "$HOME/.fzf/install" --all
 
-# Map caps lock to additional ctrl key
-./caps.sh
+# Fix Ibus on QT5
+./fix-ibus.sh
