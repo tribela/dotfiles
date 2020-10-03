@@ -30,8 +30,8 @@ set searchurls.dic http://dic.naver.com/?query=%s
 set searchurls.tr https://translate.google.com/#view=home&op=translate&sl=%s1&tl=%s2&text=%s3
 
 " change link hint mode
-bindurl www.google.com f hint -Jc .rc > .r > a
-bindurl www.google.com F hint -Jtc .rc > .r > a
+bindurl www.google.com f hint -Jc .rc a
+bindurl www.google.com F hint -Jtc .rc a
 
 bindurl www.youtube.com f hint -Jc a.yt-simple-endpoint
 bindurl www.youtube.com F hint -Jtc a#endpoint, a#video-title
