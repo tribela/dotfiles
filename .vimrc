@@ -119,12 +119,17 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 150
 Plug 'davidhalter/jedi'
 Plug 'deoplete-plugins/deoplete-jedi', {'for': 'python'}
 Plug 'Shougo/deoplete-clangx', {'for': ['c', 'cpp']}
 
 call plug#end()
+
+" Deoplete options must be after plug#end
+call deoplete#custom#option({
+\ 'auto_complete_delay': 200,
+\ 'smart_case': v:true,
+\ })
 
 
 try
