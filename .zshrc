@@ -165,7 +165,9 @@ fi
 # brew
 test -d $HOME/.linuxbrew && eval $($HOME/.linuxbrew/bin/brew shellenv)
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-eval $($(brew --prefix)/bin/brew shellenv)
+if hash brew 2>/dev/null; then
+    eval $($(brew --prefix)/bin/brew shellenv)
+fi
 
 # Pyenv
 if ! which pyenv &>/dev/null && [ -d "$HOME/.pyenv/bin" ]; then
