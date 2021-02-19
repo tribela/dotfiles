@@ -126,10 +126,12 @@ Plug 'Shougo/deoplete-clangx', {'for': ['c', 'cpp']}
 call plug#end()
 
 " Deoplete options must be after plug#end
-call deoplete#custom#option({
-\ 'auto_complete_delay': 200,
-\ 'smart_case': v:true,
-\ })
+if exists('g:deoplete#_initialized')
+  call deoplete#custom#option({
+        \ 'auto_complete_delay': 200,
+        \ 'smart_case': v:true,
+        \ })
+endif
 
 
 try
