@@ -73,7 +73,7 @@ Plug 'w0rp/ale' " Async lint engine
 nmap [x <Plug>(ale_previous_wrap)
 nmap ]x <Plug>(ale_next_wrap)
 au FileType python let b:ale_linters = ['flake8']
-Plug 'ciaranm/detectindent'
+Plug 'roryokane/detectindent'
 au BufRead * DetectIndent
 Plug 'markonm/traces.vim' " Preview substitute
 Plug 'kshenoy/vim-signature' " SignColumn marker
@@ -176,8 +176,8 @@ imap <C-H> <esc><C-W><i
 imap <C-L> <esc><C-W>>i
 
 "Up and Down for wrapped lines
-" nnoremap j gj
-" nnoremap k gk
+nnoremap j gj
+nnoremap k gk
 
 "Up and Down key for scroll
 nnoremap <up> <C-y>
