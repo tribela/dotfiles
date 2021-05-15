@@ -45,7 +45,7 @@ ZSH_THEME="flazz"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git restic)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -92,16 +92,6 @@ fi
 
 if [ -d "$HOME/.local/bin" ]; then
     export PATH="$HOME/.local/bin:$PATH"
-fi
-
-
-# "resize" command for GUI term
-if [ ! -z "$XDG_CURRENT_DESKTOP" ]; then
-    resize() {
-        local cols=$1
-        local lines=$2
-        printf "\e[8;${lines};${cols}t"
-    }
 fi
 
 if [ -d "$HOME/.cargo/bin" ]; then
@@ -165,18 +155,14 @@ fi
 # brew
 test -d "$HOME/.linuxbrew" && eval "$($HOME/.linuxbrew/bin/brew shellenv)"
 test -d "/home/linuxbrew/.linuxbrew" && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-if hash brew 2>/dev/null; then
-    eval $($(brew --prefix)/bin/brew shellenv)
-fi
 
 # Pyenv
 if ! which pyenv &>/dev/null && [ -d "$HOME/.pyenv/bin" ]; then
     export PATH=$HOME/.pyenv/bin:$PATH
 fi
 if which pyenv &>/dev/null; then
+    eval "$(pyenv init --path)"
     eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-    source "$(pyenv root)/completions/pyenv.zsh"
 fi
 
 # Virtualenv wrapper
@@ -215,9 +201,13 @@ alias flake8="flake8 --append-config=$HOME/.config/flake8"
 if [ -s "$HOME/.nvm/nvm.sh" ]; then
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/bash_completion"  ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    # Lazy load
     for command in {nvm,node,npm}; do
         alias $command="unalias nvm node npm && \. $NVM_DIR/nvm.sh && $command"  # This loads nvm
     done
+
+    # Instant load
+    # . $NVM_DIR/nvm.sh
 fi
 
 # ccache
