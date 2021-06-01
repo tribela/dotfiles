@@ -144,6 +144,24 @@ else
     host_color="[38;2;$(get_rgb $(hostname))m"
 fi
 
+parse_git_dirty () {
+    local UNTRACKED
+    local MODIFIED
+    local STATUS
+    STATUS=''
+    MODIFIED=$(__git_prompt_git status --porcelain --untracked-files=no 2>/dev/null)
+    if [[ -n $MODIFIED ]]
+    then
+        STATUS="${STATUS}+"
+    fi
+    UNTRACKED=$(__git_prompt_git ls-files -o --exclude-standard 2>/dev/null)
+    if [[ -n $UNTRACKED ]]
+    then
+        STATUS="${STATUS}?"
+    fi
+    echo ${STATUS}
+}
+
 export PS1='%{${username_color}%}%n%{${reset_color}%}@%{${host_color}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
 
 # Vim vs Nvim
