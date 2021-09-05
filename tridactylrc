@@ -26,26 +26,28 @@ bind ;c composite hint_focus; !s xdotool key Menu
 bind ;e hint -c input
 
 " search urls
-set searchurls.dic http://dic.naver.com/?query=%s
+set searchurls.dic https://dict.naver.com/?query=%s
 set searchurls.tr https://translate.google.com/#view=home&op=translate&sl=%s1&tl=%s2&text=%s3
 
 " change link hint mode
-bindurl www.google.com f hint -Jc .rc a
-bindurl www.google.com F hint -Jtc .rc a
+bindurl www.google.com f hint -Jc .g a
+bindurl www.google.com F hint -Jtc .g a
 
 bindurl www.youtube.com f hint -Jc a.yt-simple-endpoint
 bindurl www.youtube.com F hint -Jtc a#endpoint, a#video-title
 
-bindurl duckduckgo.com f hint -Jc a.result__a
-bindurl duckduckgo.com F hint -Jtc a.result__a
+bindurl duckduckgo.com f hint -Jc a.result__a,a.module__clickable-header
+bindurl duckduckgo.com F hint -Jtc a.result__a,a.module__clickable-header
 
 " Ignore on these urls
 " mastodon
-autocmd TabEnter ^https://[^/]+/web/ mode ignore
-autocmd DocStart ^https://[^/]+/web/ mode ignore
-autocmd TabEnter https://mail.google.com/ mode ignore
-autocmd DocStart https://mail.google.com/ mode ignore
-autocmd TabEnter https://twitch.tv/ mode ignore
+blacklistadd ^https://[^/]+/web/ mode ignore
+blacklistadd https://mail.google.com/ mode ignore
+blacklistadd https://twitch.tv/ mode ignore
+blacklistadd https://docs.google.com/ mode ignore
+" blacklistadd https://plex.kjwon15.net/ mode ignore
+
+seturl https://plex.kjwon15.net/ modeindicatormodes.ignore false
 
 unbindurl youtube\.com/watch j
 unbindurl youtube\.com/watch k
