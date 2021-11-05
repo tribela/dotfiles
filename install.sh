@@ -2,7 +2,7 @@
 path=$(dirname "$(readlink -e "$0")")
 cd "$path" || true
 
-files=('.bashrc' '.gitconfig' '.ideavimrc' '.tmux.conf' '.vim' '.vimrc' '.zshrc' '.zprofile' '.npmrc' '.sqliterc')
+files=('.bashrc' '.gitconfig' '.ideavimrc' '.tmux.conf' '.zshrc' '.zprofile' '.npmrc' '.sqliterc')
 
 for file in "${files[@]}"; do
     ln -sfT "$path/$file" "$HOME/$file"
@@ -13,18 +13,25 @@ if [ -e "$path/tridactylrc" ]; then
     ln -sfT "$path/tridactylrc" "$HOME/.config/tridactyl/tridactylrc"
 fi
 
+# Vim
 'curl' -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ln -sf "$path/init.vim" ~/.vimrc
+mkdir -p "$HOME/.vim" || true
+for fname in vim/*; do
+	ln -sf "$path/$fname" ~/.vim/
+done
 vim +PlugUpgrade +PlugInstall +qall
 
-if hash nvim 2>/dev/null; then
-    mkdir -p ~/.config/nvim
-    'curl' -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    ln -sf "$path/.vimrc" ~/.config/nvim/init.vim
-     ln -sfT "$path/.vim/snippets" ~/.config/nvim/snippets
-    nvim +PlugUpgrade +PlugInstall +qall
-fi
+mkdir -p ~/.config/nvim
+for fname in vim/*; do
+    ln -sf "$path/$fname" ~/.config/nvim/
+done
+'curl' -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ln -sf "$path/init.vim" ~/.config/nvim/init.vim
+ ln -sfT "$path/vim/snippets" ~/.config/nvim/snippets
+nvim +PlugUpgrade +PlugInstall +qall
 
 mkdir -p "$HOME/.local/bin"
 ln -sf "$path/tmx" "$HOME/.local/bin/tmx"
