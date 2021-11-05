@@ -1,13 +1,3 @@
-map <C-S> :w<cr>
-imap <C-s> <esc>:w<cr>i
-
-if !exists('g:vscode')
-  map <C-J> <C-W>-
-  map <C-K> <C-W>+
-  map <C-H> <C-W><
-  map <C-L> <C-W>>
-endif
-
 "Up and Down for wrapped lines
 nnoremap j gj
 nnoremap k gk
