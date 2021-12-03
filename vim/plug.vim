@@ -90,14 +90,15 @@ if !exists('g:vscode')
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'hrsh7th/nvim-cmp'
   else
-    Plug 'Shougo/deoplete.nvim'
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
-    let g:deoplete#enable_at_startup = 1
-    Plug 'davidhalter/jedi'
-    Plug 'deoplete-plugins/deoplete-jedi', {'for': 'python'}
-    Plug 'Shougo/deoplete-clangx', {'for': ['c', 'cpp']}
+    " Plug 'davidhalter/jedi'
+    " Plug 'deoplete-plugins/deoplete-jedi', {'for': 'python'}
+    " Plug 'Shougo/deoplete-clangx', {'for': ['c', 'cpp']}
   endif
+
+  Plug 'Shougo/deoplete.nvim'
+  let g:deoplete#enable_at_startup = 1
 endif
 
 call plug#end()
