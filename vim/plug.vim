@@ -74,6 +74,7 @@ let g:snipMate = { 'snippet_version': 1 }
 " let g:neosnippet#enable_snipmate_compatibility = 1
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
 " End snipmate
 
 " Shell script lint.
