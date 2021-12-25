@@ -20,7 +20,9 @@ Plug 'yous/vim-open-color'
 Plug 'Chiel92/vim-autoformat' " Auto format uglified files
 let g:formatterpath=[$HOME.'/.yarn/bin', $HOME.'/.local/bin']
 Plug 'taku-o/vim-toggle' " + to toggle value
-Plug 'github/copilot.vim'
+if !exists('g:vscode')
+  Plug 'github/copilot.vim'
+endif
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'  " gcc to comment

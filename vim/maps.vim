@@ -18,7 +18,8 @@ vnoremap L $
 
 "Force saving root permimssion file
 if !exists('g:vscode')
-  cnoremap w!! %!sudo tee > /dev/null %
+  " cnoremap !w! w !sudo -S tee > /dev/null %
+  command W :w !sudo -S tee >/dev/null %
 endif
 
 " Insert timestamp
