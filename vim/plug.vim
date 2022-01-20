@@ -20,6 +20,7 @@ Plug 'yous/vim-open-color'
 Plug 'Chiel92/vim-autoformat' " Auto format uglified files
 let g:formatterpath=[$HOME.'/.yarn/bin', $HOME.'/.local/bin']
 Plug 'taku-o/vim-toggle' " + to toggle value
+
 if !exists('g:vscode')
   Plug 'github/copilot.vim'
 endif

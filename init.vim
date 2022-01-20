@@ -66,11 +66,6 @@ endtry
 
 au filetype python setlocal cc=80
 
-"Spell check
-au filetype gitcommit setlocal spell textwidth=72 | nnoremap <C-]> 1z=``
-autocmd BufRead,BufNewFile *.md,*.rst setlocal spell | nnoremap <C-]> 1z=``
-set spelllang+=cjk
-
 
 " set cursor to the last worked line
 set viewoptions=cursor
