@@ -47,7 +47,7 @@ Plug 'roryokane/detectindent'
 Plug 'editorconfig/editorconfig-vim'
 au BufRead * DetectIndent
 Plug 'kshenoy/vim-signature' " SignColumn marker
-Plug 'ap/vim-css-color'
+Plug 'ap/vim-css-color', { 'for': ['css'] }
 Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'jinja', 'jinja2']} " HTML zencoding.
 let g:user_emmet_leader_key='<C-y>'
 Plug 'lepture/vim-jinja', {'for': ['html', 'jinja', 'jinja2']}

@@ -32,6 +32,7 @@ nnoremap <silent>gr <cmd>Lspsaga rename<CR>
 nnoremap <silent> gd <cmd>Lspsaga preview_definition<CR>
 " nnoremap <silent> gD :Lspsaga definition<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent><C-]> <cmd>lua vim.lsp.buf.definition()<CR>
 
 nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
 nnoremap <silent>[d <cmd>lua require('lspsaga.diagnostic').lsp_jump_diagnostic_prev()<CR>
