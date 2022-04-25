@@ -144,6 +144,9 @@ else
     host_color="[38;2;$(get_rgb $(hostname))m"
 fi
 
+unset -f get_rgb
+unset -f get_255
+
 parse_git_dirty () {
     local UNTRACKED
     local MODIFIED
@@ -239,4 +242,4 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /home/kjwon15/.local/bin/mc mc
 
 # Sanitise path
-export PATH=${$(echo $PATH | tr : '\n' | cat -n | sort -u -k2 | sort -gk1 | awk '{print $2}' | tr '\n' :)%:}
+export PATH=${$(echo $PATH | tr : '\n' | cat -n | sort -u -k2 | sort -gk1 | cut -f2 | tr '\n' :)%:}
