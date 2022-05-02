@@ -36,8 +36,8 @@ bindurl www.google.com F hint -Jtc .g a
 bindurl www.youtube.com f hint -Jc a.yt-simple-endpoint
 bindurl www.youtube.com F hint -Jtc a#endpoint, a#video-title
 
-bindurl duckduckgo.com f hint -Jc a.result__a,a.module__clickable-header
-bindurl duckduckgo.com F hint -Jtc a.result__a,a.module__clickable-header
+bindurl duckduckgo.com f hint -Jc #links_wrapper div > a
+bindurl duckduckgo.com F hint -Jtc #links_wrapper div > a
 
 " Ignore on these urls
 " mastodon
