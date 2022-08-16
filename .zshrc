@@ -223,8 +223,8 @@ if [ -s "$HOME/.nvm/nvm.sh" ]; then
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/bash_completion"  ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
     # Lazy load
-    for command in {nvm,node,npm}; do
-        alias $command="unalias nvm node npm && \. $NVM_DIR/nvm.sh && $command"  # This loads nvm
+    for command in {nvm,node,npm,yarn}; do
+        alias $command="unalias nvm node npm yarn && \. $NVM_DIR/nvm.sh && $command"  # This loads nvm
     done
 
     # Instant load
