@@ -112,5 +112,7 @@ if exists('g:deoplete#_initialized')
   call deoplete#custom#option({
         \ 'auto_complete_delay': 200,
         \ 'smart_case': v:true,
+        \ 'refresh_backspace': v:false,
+        \ 'refresh_always': v:false,
         \ })
 endif
