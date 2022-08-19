@@ -243,3 +243,39 @@ complete -o nospace -C /home/kjwon15/.local/bin/mc mc
 
 # Sanitise path
 export PATH=${$(echo $PATH | tr : '\n' | cat -n | sort -u -k2 | sort -gk1 | cut -f2 | tr '\n' :)%:}
+
+
+# Aliases and functions
+
+alias df='df -h -x tmpfs -x devtmpfs -x squashfs'
+alias xc='xclip -sel clipboard'
+alias ttfb='curl -so /dev/null -w "HTTP %{http_version} %{http_code} Remote IP: %{remote_ip}\nConnect: %{time_connect}\nTTFB: %{time_starttransfer}\nTotal time: %{time_total}\nDownload speed: %{speed_download}bps\nBytes: %{size_download}\n"'
+
+ap() {
+    https $@ Accept:application/activity+json
+}
+
+shodan() {
+    xdg-open https://shodan.io/domain/$1
+    dig +short $1 | xargs -i xdg-open https://shodan.io/host/{}
+}
+
+check_mtu() {
+    local target=$1
+    shift
+    local lower=0
+    local upper=1500
+    until [[ $((lower + 1)) -eq $upper ]]; do
+        current=$(((lower + upper) / 2))
+        echo -n "lower: $lower, upper: $upper, testing: $current -- "
+        if ping -M do -s $current -c 2 -i 0.2 $target $@ &> /dev/null; then
+            echo "ok"
+            lower=$current
+        else
+            echo "fail"
+            upper=$current
+        fi
+    done
+
+    echo "max packet size: $lower, mtu: $((lower + 28))"
+}
