@@ -8,16 +8,17 @@
 	ui = true
 [alias]
 	co = checkout
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an <%ae>%Creset' --abbrev-commit --author-date-order
-	lga = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an <%ae>%Creset' --abbrev-commit --author-date-order
-	lgt = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)%an <%ae>%Creset' --abbrev-commit --author-date-order
-	lgat = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)%an <%ae>%Creset' --abbrev-commit --author-date-order
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)%an <%ae>%Creset' --abbrev-commit --author-date-order
+	lga = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)%an <%ae>%Creset' --abbrev-commit --author-date-order
+	lgt = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ai) %C(bold blue)%an <%ae>%Creset' --abbrev-commit --author-date-order
+	lgat = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ai) %C(bold blue)%an <%ae>%Creset' --abbrev-commit --author-date-order
 	df = diff -b --color-words
 	fix = commit --amend -C HEAD
 	st = status -sb
 [push]
 	default = simple
 	followTags = true
+	autoSetupRemote = true
 [diff]
 	tool = vimdiff
 	compactionHeuristic = true
@@ -27,6 +28,6 @@
 	conflictstyle = diff3
 [init]
 	defaultBranch = main
-
-[url "ssh://git@github.com"]
-	insteadOf = "https://github.com"
+[rerere]
+	enabled = true
+	autoupdate = false
