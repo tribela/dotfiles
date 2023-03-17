@@ -1,6 +1,3 @@
-if !exists('g:loaded_cmp') | finish | endif
-
-lua << EOF
 local cmp = require('cmp')
 
 cmp.setup({
@@ -37,4 +34,3 @@ cmp.setup({
     { name = 'buffer' },
   })
 })
-EOF

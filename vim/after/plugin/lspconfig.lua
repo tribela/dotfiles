@@ -1,8 +1,3 @@
-if !exists('g:lspconfig')
-  finish
-endif
-
-lua << EOF
 local nvim_lsp = require('lspconfig')
 
 -- Completion
@@ -41,5 +36,3 @@ nvim_lsp.clangd.setup {
     "--offset-encoding=utf-16",
   },
 }
-
-EOF
