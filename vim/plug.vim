@@ -51,7 +51,7 @@ Plug 'ap/vim-css-color', { 'for': ['css'] }
 Plug 'mattn/emmet-vim', { 'for': ['xml', 'html', 'css', 'jinja', 'jinja2']} " HTML zencoding.
 let g:user_emmet_leader_key='<C-y>'
 Plug 'lepture/vim-jinja', {'for': ['html', 'jinja', 'jinja2']}
-Plug 'kjwon15/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'  " All in one filetypes
 
 " Filetype
