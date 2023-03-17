@@ -88,6 +88,7 @@ if !exists('g:vscode')
   if has('nvim')
     Plug 'neovim/nvim-lspconfig'
     Plug 'glepnir/lspsaga.nvim'
+    Plug 'nvim-tree/nvim-web-devicons' " Dependency for lspsaga
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'
