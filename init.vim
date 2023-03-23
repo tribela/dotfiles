@@ -99,3 +99,10 @@ endif
 if has("gui_gtk2")
   set guifont=Source\ Code\ Pro\ Semi-Bold\ 11
 endif
+
+if exists('g:neovide')
+  let g:neovide_transparency=0.6
+  lua vim.o.guifont = "Comic Mono,Source Code Pro:h16"
+  color PaperColor
+  let g:neovide_cursor_vfx_mode = "pixiedust"
+endif
