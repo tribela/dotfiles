@@ -23,6 +23,9 @@ Plug 'taku-o/vim-toggle' " + to toggle value
 
 if !exists('g:vscode')
   Plug 'github/copilot.vim'
+  let g:copilot_filetypes = {
+        \ 'gitcommit': v:true,
+        \ }
 endif
 
 Plug 'tpope/vim-fugitive'
