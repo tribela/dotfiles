@@ -48,11 +48,9 @@ else
 endif
 
 try
-  if getbufvar(winbufnr(0), '&t_Co') == 256
-    colo eva01
-  else
-    colo open-color
-  endif
+  " if getbufvar(winbufnr(0), '&t_Co') == 256
+  colo eva01
+  " endif
 catch /E185/
   colo desert
 endtry
@@ -103,6 +101,6 @@ endif
 if exists('g:neovide')
   let g:neovide_transparency=0.6
   lua vim.o.guifont = "Comic Mono,Source Code Pro:h16"
-  color PaperColor
+  color nightfox
   let g:neovide_cursor_vfx_mode = "pixiedust"
 endif

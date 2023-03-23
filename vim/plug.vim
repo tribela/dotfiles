@@ -14,7 +14,7 @@ endif
 " Colorschemes
 Plug 'hachy/eva01.vim'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'yous/vim-open-color'
+Plug 'edeneast/nightfox.nvim'
 
 " Tools
 Plug 'Chiel92/vim-autoformat' " Auto format uglified files
