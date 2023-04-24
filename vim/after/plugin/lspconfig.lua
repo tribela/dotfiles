@@ -1,3 +1,7 @@
+if vim.g.lspconfig == nil then
+  return
+end
+
 local nvim_lsp = require('lspconfig')
 
 -- Completion

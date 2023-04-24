@@ -1,3 +1,7 @@
+if not vim.g.loaded_cmp then
+  return
+end
+
 local cmp = require('cmp')
 
 cmp.setup({

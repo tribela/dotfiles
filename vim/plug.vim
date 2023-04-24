@@ -97,11 +97,8 @@ if !exists('g:vscode')
     Plug 'glepnir/lspsaga.nvim'
     Plug 'nvim-tree/nvim-web-devicons' " Dependency for lspsaga
     Plug 'nvim-treesitter/nvim-treesitter' " Dependency for lspsaga
-    Plug 'hrsh7th/cmp-nvim-lsp'
-    Plug 'hrsh7th/cmp-buffer'
-    Plug 'hrsh7th/cmp-path'
-    Plug 'hrsh7th/cmp-cmdline'
-    Plug 'hrsh7th/nvim-cmp'
+    Plug 'prabirshrestha/asyncomplete.vim'
+    Plug 'prabirshrestha/asyncomplete-lsp.vim'
     Plug 'prabirshrestha/vim-lsp'
     Plug 'mattn/vim-lsp-settings'
   else

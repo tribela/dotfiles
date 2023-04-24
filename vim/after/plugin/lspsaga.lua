@@ -1,3 +1,7 @@
+if vim.g.lspsaga_version == nil then
+  return
+end
+
 require('lspsaga').setup({
   error_sign = 'E',
   warn_sign = 'W',
