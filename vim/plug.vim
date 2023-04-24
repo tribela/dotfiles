@@ -4,7 +4,7 @@ endif
 
 call plug#begin()
 
-Plug 'kjwon15/vim-transparent'
+Plug 'tribela/vim-transparent'
 autocmd ColorScheme * silent! call background#clear_background()
 
 if !has('nvim')
