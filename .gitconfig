@@ -15,6 +15,8 @@
 	df = diff -b --color-words
 	fix = commit --amend -C HEAD
 	st = status -sb
+	fpush = push --force-with-lease
+	gone = "!f() { git fetch --all --prune; git branch -vv | awk '/^[^*+].*: gone]/{print $1}' | xargs -I{} git branch -D {}; }; f"
 [push]
 	default = simple
 	followTags = true
