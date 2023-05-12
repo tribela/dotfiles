@@ -8,6 +8,10 @@ for file in "${files[@]}"; do
     ln -sfT "$path/$file" "$HOME/$file"
 done
 
+for file in .config/*; do
+    ln -sfT "$path/$file" "$HOME/$file"
+done
+
 if [ -e "$path/tridactylrc" ]; then
     mkdir -p "$HOME/.config/tridactyl"
     ln -sfT "$path/tridactylrc" "$HOME/.config/tridactyl/tridactylrc"
