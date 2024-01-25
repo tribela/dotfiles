@@ -98,10 +98,8 @@ if [ -d "$HOME/.cargo/bin" ]; then
     export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-if [[ -x $(which vcprompt) ]]; then
-    export VCPROMPT_FORMAT='<%b%a%m%u> '
-    alias git_prompt_info='vcprompt'
-fi
+ZSH_THEME_GIT_PROMPT_PREFIX='‹'
+ZSH_THEME_GIT_PROMPT_SUFFIX='›'
 if [[ -s /etc/zsh_command_not_found ]]; then
     source /etc/zsh_command_not_found
 fi

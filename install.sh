@@ -40,11 +40,6 @@ nvim +PlugUpgrade +PlugInstall +qall
 mkdir -p "$HOME/.local/bin"
 ln -sf "$path/tmx" "$HOME/.local/bin/tmx"
 
-# Install vcprompt
-
-curl -sL https://github.com/djl/vcprompt/raw/master/bin/vcprompt -o ~/.local/bin/vcprompt
-chmod +x ~/.local/bin/vcprompt
-
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 "$HOME/.fzf/install" --all
