@@ -2,6 +2,8 @@
 unbind --mode=normal <F1>
 unbind --mode=normal <esc>
 
+command fixamo js tri.excmds.setpref("privacy.resistFingerprinting.block_mozAddonManager", "true").then(tri.excmds.setpref("extensions.webextensions.restrictedDomains", '""').then(tri.excmds.fillcmdline_tmp(3000, "Permissions added to user.js. Please restart Firefox to make them take affect.")))
+
 set hintchars asdf;lkjewio
 set hintfiltermode vimperator-reflow
 set hintuppercase false
@@ -19,7 +21,8 @@ bind n findnext 1
 bind N findnext -1
 bind ,<space> nohlsearch
 
-bind ;f hint -t " Open in new tab and switch to it
+" Open in new tab and switch to it
+bind ;f hint -t
 " Open context menu
 command hint_focus hint -;
 bind ;c composite hint_focus; !s xdotool key Menu
@@ -36,22 +39,26 @@ bindurl www.google.com F hint -Jtc .g a
 bindurl www.youtube.com f hint -Jc a.yt-simple-endpoint
 bindurl www.youtube.com F hint -Jtc a#endpoint, a#video-title
 
-bindurl duckduckgo.com f hint -Jc #links_wrapper div > a
-bindurl duckduckgo.com F hint -Jtc #links_wrapper div > a
+" bindurl duckduckgo.com f hint -Jc #links_wrapper div > a
+" bindurl duckduckgo.com F hint -Jtc #links_wrapper div > a
 
 " Ignore on these urls
 " mastodon
 blacklistadd ^https://[^/]+/web/ mode ignore
+blacklistadd ^https://qdon.space/(?!admin|sidekiq|pghero|gallery) mode ignore
+blacklistadd ^https://beta.qdon.space/(?!admin|sidekiq|pghero|gallery) mode ignore
+blacklistadd ^https://[^/]+/deck/* mode ignore
 blacklistadd https://mail.google.com/ mode ignore
 blacklistadd https://twitch.tv/ mode ignore
 blacklistadd https://docs.google.com/ mode ignore
 " blacklistadd https://plex.kjwon15.net/ mode ignore
 
 seturl https://plex.kjwon15.net/ modeindicatormodes.ignore false
+seturl https://app.plex.tv/ modeindicatormodes.ignore false
 
-unbindurl youtube\.com/watch j
-unbindurl youtube\.com/watch k
-unbindurl youtube\.com/watch l
+unbindurl youtube.com/watch j
+unbindurl youtube.com/watch k
+unbindurl youtube.com/watch l
 
 
 " vim: set filetype=vim:
