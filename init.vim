@@ -35,8 +35,8 @@ autocmd! Filetype * setlocal formatoptions-=o " disable autocomment on o/O
 
 if has('nvim')
   set inccommand=nosplit " Preview substitute
-  let g:python3_host_prog=$HOME.'/.pyenv/shims/python3'
-  let g:python_host_prog='/usr/bin/python2'
+  " let g:python3_host_prog=$HOME.'/.pyenv/shims/python3'
+  " let g:python_host_prog='/usr/bin/python2'
 endif
 
 if has('nvim')
@@ -62,7 +62,7 @@ catch /E474/
   set lcs=tab:\|\ ,trail:.,extends:>,precedes:<
 endtry
 
-au filetype python setlocal cc=80
+au filetype python setlocal cc=120
 
 
 " set cursor to the last worked line

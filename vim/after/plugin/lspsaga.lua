@@ -16,6 +16,47 @@ require('lspsaga').setup({
   symbol_in_winbar = {
     enable = false,
   },
+  ui = {
+    kind = {
+      ['File']={  '', 'Tag' },
+      ['Module']={  '', 'Exception' },
+      ['Namespace']={  '', 'Include' },
+      ['Package']={  '', 'Label' },
+      ['Class']={  '', 'Include' },
+      ['Method']={  '', 'Function' },
+      ['Property']={  '', '@property' },
+      ['Field']={  ' ', '@field' },
+      ['Constructor']={  '', '@constructor' },
+      ['Enum']={  '', '@number' },
+      ['Interface']={  '', 'Type' },
+      ['Function']={  '', 'Function' },
+      ['Variable']={  '', '@variable' },
+      ['Constant']={  '', 'Constant' },
+      ['String']={  '', 'String' },
+      ['Number']={  '', 'Number' },
+      ['Boolean']={  '', 'Boolean' },
+      ['Array']={  '', 'Type' },
+      ['Object']={  '', 'Type' },
+      ['Key']={  '', '' },
+      ['Null']={  '', 'Constant' },
+      ['EnumMember']={  '', 'Number' },
+      ['Struct']={  '', 'Type' },
+      ['Event']={  '', 'Constant' },
+      ['Operator']={  '', 'Operator' },
+      ['TypeParameter']={  '', 'Type' },
+      -- ccls
+      ['TypeAlias']={  '', 'Type' },
+      ['Parameter']={  '', '@parameter' },
+      ['StaticMethod']={  '', 'Function' },
+      ['Macro']={  '', 'Macro' },
+      -- for completion sb microsoft!!!
+      ['Text']={  '', 'String' },
+      ['Snippet']={  ' ', '@variable' },
+      ['Folder']={  ' ', '@parameter' },
+      ['Unit']={  '', 'Number' },
+      ['Value']={  '', '@variable' },
+    }
+  }
 })
 
 local keymap = vim.keymap.set
