@@ -66,10 +66,6 @@ Plug 'nvie/vim-flake8', {'for': 'python'}
 Plug 'chaimleib/vim-renpy', {'for': 'renpy'}
 Plug 'vim-scripts/icalendar.vim', {'for': 'icalendar'}
 
-"Vimdeck
-Plug 'vim-scripts/SyntaxRange'
-Plug 'vim-scripts/ingo-library'
-
 " code scratchpad
 Plug 'metakirby5/codi.vim'
 
@@ -97,30 +93,43 @@ if !exists('g:vscode')
     Plug 'glepnir/lspsaga.nvim'
     Plug 'nvim-tree/nvim-web-devicons' " Dependency for lspsaga
     Plug 'nvim-treesitter/nvim-treesitter' " Dependency for lspsaga
-    Plug 'prabirshrestha/asyncomplete.vim'
-    Plug 'prabirshrestha/asyncomplete-lsp.vim'
     Plug 'prabirshrestha/vim-lsp'
     Plug 'mattn/vim-lsp-settings'
-  else
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-    " Plug 'davidhalter/jedi'
-    " Plug 'deoplete-plugins/deoplete-jedi', {'for': 'python'}
-    " Plug 'Shougo/deoplete-clangx', {'for': ['c', 'cpp']}
   endif
 
-  Plug 'Shougo/deoplete.nvim'
-  let g:deoplete#enable_at_startup = 1
+  " Autocompletion
+  Plug 'vim-denops/denops.vim'  " Dependency for ddc.vim
+  Plug 'Shougo/ddc.vim'
+  Plug 'Shougo/ddc-ui-native'
+  Plug 'tani/ddc-fuzzy'
+  Plug 'tani/ddc-path'
+  Plug 'shun/ddc-source-vim-lsp'
 endif
 
 call plug#end()
 
-" Deoplete options must be after plug#end
-if exists('g:deoplete#_initialized')
-  call deoplete#custom#option({
-        \ 'auto_complete_delay': 200,
-        \ 'smart_case': v:true,
-        \ 'refresh_backspace': v:false,
-        \ 'refresh_always': v:false,
-        \ })
-endif
+call ddc#custom#patch_global({
+  \ 'ui': 'native',
+  \ 'sources': ['vim-lsp', 'path'],
+  \ 'sourceOptions': {
+    \ '_': {
+      \ 'matchers': ['matcher_fuzzy'],
+      \ 'sorters': ['sorter_fuzzy'],
+      \ 'converters': ['converter_fuzzy'],
+      \ 'ignoreCase': v:true,
+    \ },
+    \ 'vim-lsp': {
+      \ 'mark': 'LSP',
+      \ 'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+    \ },
+    \ 'path': {
+      \ 'mark': 'PATH',
+    \},
+  \ },
+  \ 'sourceParams': {
+    \ 'path': {
+      \ 'cmd': ['find', '--maxdeptch', '5'],
+    \ },
+  \ },
+\ })
+call ddc#enable()
