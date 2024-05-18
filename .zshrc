@@ -45,7 +45,7 @@ ZSH_THEME="flazz"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=()
+plugins=(docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -196,6 +196,8 @@ if ! which mktmpenv &>/dev/null; then
     fi
 fi
 
+export PYTHON_HISTORY=/var/run/user/$UID
+
 # Rbenv
 if [ -d "$HOME/.rbenv/bin" ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
@@ -213,16 +215,16 @@ fi
 # added by travis gem
 [ -f /home/kjwon15/.travis/travis.sh ] && source /home/kjwon15/.travis/travis.sh
 
-# Alias for damn flake8
-alias flake8="flake8 --append-config=$HOME/.config/flake8"
-
-# NVM
-if [ -s "$HOME/.nvm/nvm.sh" ]; then
+# Node
+if [ -d "$HOME/.volta" ]; then
+    export VOLTA_HOME="$HOME/.volta"
+    export PATH="$VOLTA_HOME/bin:$PATH"
+elif [ -s "$HOME/.nvm/nvm.sh" ]; then
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/bash_completion"  ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
     # Lazy load
-    for command in {nvm,node,npm,yarn}; do
-        alias $command="unalias nvm node npm yarn && \. $NVM_DIR/nvm.sh && $command"  # This loads nvm
+    for command in {nvm,node,npm,yarn,corepack}; do
+        alias $command="unalias nvm node npm yarn corepack && \. $NVM_DIR/nvm.sh && $command"  # This loads nvm
     done
 
     # Instant load
@@ -248,6 +250,10 @@ export PATH=${$(echo $PATH | tr : '\n' | cat -n | sort -u -k2 | sort -gk1 | cut 
 alias df='df -h -x tmpfs -x devtmpfs -x squashfs'
 alias xc='xclip -sel clipboard'
 alias ttfb='curl -so /dev/null -w "HTTP %{http_version} %{http_code} Remote IP: %{remote_ip}\nConnect: %{time_connect}\nTTFB: %{time_starttransfer}\nTotal time: %{time_total}\nDownload speed: %{speed_download}bps\nBytes: %{size_download}\n"'
+
+ipget() {
+    https "ifconfig.co/json?ip=$1"
+}
 
 ap() {
     https $@ Accept:application/activity+json
