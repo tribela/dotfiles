@@ -27,15 +27,8 @@ for fname in vim/*; do
 done
 vim +PlugUpgrade +PlugInstall +qall
 
-mkdir -p ~/.config/nvim
-for fname in vim/*; do
-    ln -sf "$path/$fname" ~/.config/nvim/
-done
-'curl' -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-ln -sf "$path/init.vim" ~/.config/nvim/init.vim
- ln -sfT "$path/vim/snippets" ~/.config/nvim/snippets
-nvim +PlugUpgrade +PlugInstall +qall
+# Neovim
+ln -sf "$path/nvim" ~/.config/nvim
 
 mkdir -p "$HOME/.local/bin"
 ln -sf "$path/tmx" "$HOME/.local/bin/tmx"

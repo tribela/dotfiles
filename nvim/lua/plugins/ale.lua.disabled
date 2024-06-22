@@ -1,0 +1,15 @@
+return {
+	'dense-analysis/ale',
+	config = function()
+		local g = vim.g
+		local keymap = vim.keymap
+
+		g.ale_completion_enabled = 1
+		-- g.ale_linters = {
+		-- 	python = { 'flake8' },
+		-- }
+
+		keymap.set('n', '[x', '<Plug>(ale_previous_wrap)')
+		keymap.set('n', ']x', '<Plug>(ale_next_wrap)')
+	end,
+}
