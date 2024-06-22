@@ -34,3 +34,10 @@ autocmd({ 'FileType'}, {
   pattern = 'gitcommit',
   callback = set_spell,
 })
+
+if vim.g.neovide then
+  vim.g.neovide_transparency = 0.6
+  vim.o.guifont = 'Comic Mono,Source Code Pro:h16'
+  vim.g.neovide_cursor_vfx_mode = 'pixiedust'
+  vim.cmd('color nightfox')
+end
