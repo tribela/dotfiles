@@ -1,6 +1,6 @@
 return {
 	'github/copilot.vim',
-	event = 'InsertEnter',
+	event = { 'BufReadPre', 'BufNewFile' },
 	config = function()
 		vim.g.copilot_filetypes = {
 			gitcommit = true,
