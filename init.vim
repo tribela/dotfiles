@@ -101,6 +101,6 @@ endif
 if exists('g:neovide')
   let g:neovide_transparency=0.6
   lua vim.o.guifont = "Comic Mono,Source Code Pro:h16"
-  color nightfox
+  vim.cmd('color nightfox')
   let g:neovide_cursor_vfx_mode = "pixiedust"
 endif

@@ -1,3 +1,3 @@
 return {
-  'tribela/vim-transparent',
+  'tribela/transparent.nvim',
 }
