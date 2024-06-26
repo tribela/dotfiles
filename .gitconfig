@@ -1,12 +1,17 @@
 [user]
-	name = Jeong Arm
-	email = kjwonmail@gmail.com
+	name = 'Jeong Arm'
+	email = 'kjwonmail@gmail.com'
+[includeIf "gitdir:~/git/"]
+    path = .gitconfig-personal
+[includeIf "gitdir:~/workspace/"]
+  	path = .gitconfig-work
 [core]
 	pager = less -FRX
 	excludesfile = ~/.gitignore
 [color]
 	ui = true
 [alias]
+	fpush = push --force-with-lease
 	co = checkout
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)%an <%ae>%Creset' --abbrev-commit --author-date-order
 	lga = log --all --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)%an <%ae>%Creset' --abbrev-commit --author-date-order
@@ -27,9 +32,11 @@
 	colorMoved = default
 [merge]
 	tool = vimdiff
-	conflictstyle = diff3
 [init]
 	defaultBranch = main
 [rerere]
 	enabled = true
 	autoupdate = false
+[diff "ansible-vault"]
+	cachetextconv = true
+	textconv = ansible-vault view
