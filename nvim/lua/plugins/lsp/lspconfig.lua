@@ -2,6 +2,7 @@ return {
 	'neovim/nvim-lspconfig',
 	dependencies = {
 		'hrsh7th/cmp-nvim-lsp',
+		'williamboman/mason.nvim',
 		{ 'antosha417/nvim-lsp-file-operations', config = true },
 		{ 'folke/neodev.nvim', opts = {} },
 	},

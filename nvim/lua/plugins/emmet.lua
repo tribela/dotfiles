@@ -1,6 +1,6 @@
 return {
 	'mattn/emmet-vim',
-	event = 'InsertEnter',
+	-- event = 'InsertEnter',
 	ft = {
 		'xml', 'html', 'css', 'jinja2',
 	},
