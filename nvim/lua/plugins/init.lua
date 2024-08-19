@@ -1,5 +1,5 @@
 return {
 	'sheerun/vim-polyglot', -- Multi filetypes
-	{ 'metakirby5/codi.vim', event = 'VeryLazy' },
+	'metakirby5/codi.vim',
 	{'editorconfig/editorconfig-vim', event = 'InsertEnter' },
 }
