@@ -28,7 +28,6 @@
 	autoSetupRemote = true
 [diff]
 	tool = vimdiff
-	compactionHeuristic = true
 	colorMoved = default
 [merge]
 	tool = vimdiff
