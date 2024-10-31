@@ -13,10 +13,22 @@ return {
 
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
+		local settings = {
+			pylsp = {
+				pylsp = {
+					plugins = {
+						flake8 = { enabled = true },
+						pycodestyle = { enabled = false },
+					},
+				},
+			},
+		}
+
 		mason_lspconfig.setup_handlers({
 			function(server_name)
 				lspconfig[server_name].setup({
 					capabilities = capabilities,
+					settings = settings[server_name],
 				})
 			end,
 		})
