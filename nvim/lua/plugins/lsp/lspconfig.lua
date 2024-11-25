@@ -18,7 +18,10 @@ return {
 				pylsp = {
 					plugins = {
 						flake8 = { enabled = true },
-						pycodestyle = { enabled = false },
+						pycodestyle = {
+							enabled = false,
+							maxLineLength = 120,
+						},
 					},
 				},
 			},
