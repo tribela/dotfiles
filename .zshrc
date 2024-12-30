@@ -248,11 +248,19 @@ export PATH=${$(echo $PATH | tr : '\n' | cat -n | sort -u -k2 | sort -gk1 | cut 
 # Aliases and functions
 
 alias df='df -h -x tmpfs -x devtmpfs -x squashfs'
+alias ip='ip -br'
+alias gpg='gpg --no-symkey-cache'
 alias xc='xclip -sel clipboard'
 alias ttfb='curl -so /dev/null -w "HTTP %{http_version} %{http_code} Remote IP: %{remote_ip}\nConnect: %{time_connect}\nTTFB: %{time_starttransfer}\nTotal time: %{time_total}\nDownload speed: %{speed_download}bps\nBytes: %{size_download}\n"'
 
 ipget() {
     https "ifconfig.co/json?ip=$1"
+}
+
+tlscheck() {
+    local host=$1
+    local port=${2:-443}
+    echo | openssl s_client -servername $host -connect $host:$port | openssl x509 -noout -dates
 }
 
 ap() {
@@ -282,4 +290,8 @@ check_mtu() {
     done
 
     echo "max packet size: $lower, mtu: $((lower + 28))"
+}
+
+unbrew() {
+    export PATH=$(echo $PATH | tr ':' '\n' | grep -v '/home/linuxbrew' | tr '\n' ':' | sed 's/:$//')
 }
