@@ -27,6 +27,7 @@ return {
 				'lua_ls',
 				'html',
 				'pylsp',
+				'clangd',
 			},
 		})
 
@@ -36,6 +37,7 @@ return {
 				'flake8',
 				'mypy',
 				'pyright',
+				'clang-format',
 			},
 		})
 	end
