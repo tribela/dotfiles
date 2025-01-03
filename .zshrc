@@ -80,10 +80,6 @@ source $ZSH/oh-my-zsh.sh
 
 unsetopt autocd
 
-if [ ! -z "$COLORTERM" ] && [[ "$TERM" != *"-256color" ]]; then
-    export TERM="${TERM}-256color"
-fi
-
 if hash nvim 2>/dev/null; then
     export EDITOR='nvim'
 else
@@ -212,9 +208,6 @@ if which direnv &>/dev/null; then
     alias tmux='direnv exec / tmux'
 fi
 
-# added by travis gem
-[ -f /home/kjwon15/.travis/travis.sh ] && source /home/kjwon15/.travis/travis.sh
-
 # Node
 if [ -d "$HOME/.volta" ]; then
     export VOLTA_HOME="$HOME/.volta"
@@ -239,7 +232,6 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /home/kjwon15/.local/bin/mc mc
 
 # Sanitise path
 export PATH=${$(echo $PATH | tr : '\n' | cat -n | sort -u -k2 | sort -gk1 | cut -f2 | tr '\n' :)%:}
