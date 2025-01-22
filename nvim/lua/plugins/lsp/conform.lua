@@ -16,6 +16,9 @@ return {
             end,
         }
 
+        -- Disable autoformat-on-save by default
+        vim.g.disable_autoformat = true
+
         vim.keymap.set({ 'n', 'v' }, '<leader>mp', function()
             conform.format({
                 lsp_fallback = true,
