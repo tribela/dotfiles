@@ -23,6 +23,7 @@ return {
 		mason_lspconfig.setup({
 			ensure_installed = {
 				'bashls',
+				'clangd',
 				'ts_ls',
 				'lua_ls',
 				'html',
