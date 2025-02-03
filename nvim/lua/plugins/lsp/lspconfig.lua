@@ -40,6 +40,7 @@ return {
 				lspconfig[server_name].setup({
 					capabilities = capabilities,
 					settings = settings[server_name],
+					root_dir = lspconfig.util.root_pattern('.git', vim.fn.getcwd()),
 				})
 			end,
 		})
