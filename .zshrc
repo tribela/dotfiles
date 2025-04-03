@@ -56,13 +56,6 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -161,12 +154,6 @@ parse_git_dirty () {
 
 export PS1='%{${username_color}%}%n%{${reset_color}%}@%{${host_color}%}%m%{${fg_bold[magenta]}%}:%{$reset_color%}%{${fg[green]}%}%3~ %{${fg[yellow]}%}$(git_prompt_info)%{${fg_bold[$CARETCOLOR]}%}%#%{${reset_color}%} '
 
-# Vim vs Nvim
-if which nvim &>/dev/null; then
-    alias vim=nvim
-    export EDITOR=nvim
-fi
-
 # brew
 test -d "$HOME/.linuxbrew" && eval "$($HOME/.linuxbrew/bin/brew shellenv)"
 test -d "/home/linuxbrew/.linuxbrew" && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -238,6 +225,12 @@ export PATH=${$(echo $PATH | tr : '\n' | cat -n | sort -u -k2 | sort -gk1 | cut 
 
 
 # Aliases and functions
+
+# Vim vs Nvim
+if which nvim &>/dev/null; then
+    alias vim=nvim
+    export EDITOR=nvim
+fi
 
 alias df='df -h -x tmpfs -x devtmpfs -x squashfs'
 alias ip='ip -br'
