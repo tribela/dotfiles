@@ -12,6 +12,22 @@ layout_poetry() {
   PATH_add "$VIRTUAL_ENV/bin"
 }
 
+layout_uv() {
+  if [[ -d ".venv" ]]; then
+    VIRTUAL_ENV="$PWD/.venv"
+  fi
+
+  if [[ -z "$VIRTUAL_ENV" || ! -d "$VIRTUAL_ENV" ]]; then
+    log_status "No virtual environment exists. Executing 'uv venv' to create one."
+    uv venv
+    VIRTUAL_ENV="$PWD/.venv"
+  fi
+
+  PATH_add "$VIRTUAL_ENV/bin"
+  export UV_ACTIVE=1
+  export VIRTUAL_ENV
+}
+
 use_nvm() {
   local node_version="$1"
 
