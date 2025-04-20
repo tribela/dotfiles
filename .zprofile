@@ -4,4 +4,6 @@ export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl)"
+if hash brew &>/dev/null; then
+	export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl)"
+fi
