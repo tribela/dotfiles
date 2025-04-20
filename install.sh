@@ -28,7 +28,7 @@ done
 vim +PlugUpgrade +PlugInstall +qall
 
 # Neovim
-ln -sf "$path/nvim" ~/.config/nvim
+ln -sfT "$path/nvim" ~/.config/nvim
 
 mkdir -p "$HOME/.local/bin"
 ln -sf "$path/tmx" "$HOME/.local/bin/tmx"
