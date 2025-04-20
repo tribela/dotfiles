@@ -30,7 +30,7 @@ return {
 					'--background-index',
 					'--query-driver=/usr/bin/**/clang-*,/bin/clang,/bin/clang++,/usr/bin/gcc,/usr/bin/g++',
 					'--clang-tidy',
-					'--clang-tidy-checks=readability-*,misc-*,bugprone-*,performance-*,modernize-*',
+					'--clang-tidy-checks=readability-*,misc-*,bugprone-*,performance-*,modernize-*,llvm-include-order',
 				}
 			}
 		}
