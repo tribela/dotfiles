@@ -45,8 +45,8 @@ bindurl www.youtube.com F hint -Jtc a#endpoint, a#video-title
 " Ignore on these urls
 " mastodon
 blacklistadd ^https://[^/]+/web/ mode ignore
-blacklistadd ^https://qdon.space/(?!admin|sidekiq|pghero|gallery) mode ignore
-blacklistadd ^https://beta.qdon.space/(?!admin|sidekiq|pghero|gallery) mode ignore
+blacklistadd ^https://qdon.space/(?!admin|sidekiq|pghero) mode ignore
+blacklistadd ^https://beta.qdon.space/(?!admin|sidekiq|pghero) mode ignore
 blacklistadd ^https://[^/]+/deck/* mode ignore
 blacklistadd https://mail.google.com/ mode ignore
 blacklistadd https://twitch.tv/ mode ignore
