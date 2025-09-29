@@ -27,6 +27,8 @@ bind ;f hint -t
 command hint_focus hint -;
 bind ;c composite hint_focus; !s xdotool key Menu
 bind ;e hint -c input
+" append hint url to ~/Downloads/urls.txt
+bind ;u hint -F e=>{tri.excmds.exclaim_quiet("echo", e.href, ">>", "~/Downloads/urls.txt")}
 
 " search urls
 set searchurls.dic https://dict.naver.com/?query=%s
