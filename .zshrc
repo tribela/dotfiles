@@ -187,6 +187,10 @@ if hash rbenv &>/dev/null; then
     eval "$(rbenv init -)"
 fi
 
+if hash brew &>/dev/null; then
+	export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl)"
+fi
+
 # direnv
 if which direnv &>/dev/null; then
     eval "$(direnv hook zsh)"
