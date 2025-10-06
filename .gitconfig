@@ -31,6 +31,7 @@
 	colorMoved = default
 [merge]
 	tool = vimdiff
+	conflictstyle = diff3
 [init]
 	defaultBranch = main
 [rerere]

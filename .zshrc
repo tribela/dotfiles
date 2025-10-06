@@ -238,7 +238,10 @@ alias df='df -h -x tmpfs -x devtmpfs -x squashfs'
 alias ip='ip -br'
 alias gpg='gpg --no-symkey-cache'
 alias xc='xclip -sel clipboard'
-alias ttfb='curl -so /dev/null -w "HTTP %{http_version} %{http_code} Remote IP: %{remote_ip}\nDNS: %{time_namelookup}\nConnect: %{time_connect}\nTTFB: %{time_starttransfer}\nTotal time: %{time_total}\nDownload speed: %{speed_download}bps\nBytes: %{size_download}\n"'
+
+ttfb() {
+    curl -so /dev/null -w "HTTP %{http_version} %{http_code} Remote IP: %{remote_ip}\nDNS: %{time_namelookup}\nConnect: %{time_connect}\nTTFB: %{time_starttransfer}\nTotal time: %{time_total}\nDownload speed: %{speed_download}bps\nBytes: %{size_download}\n" $@
+}
 
 ipget() {
     https "ifconfig.co/json?ip=$1"
