@@ -35,7 +35,7 @@ return {
 			}
 		}
 
-		mason_lspconfig.setup_handlers({
+		mason_lspconfig.setup({
 			function(server_name)
 				lspconfig[server_name].setup({
 					capabilities = capabilities,
