@@ -30,6 +30,9 @@ vim +PlugUpgrade +PlugInstall +qall
 # Neovim
 ln -sfT "$path/nvim" ~/.config/nvim
 
+# Opencode
+ln -sfT "$path/opencode" ~/.config/opencode
+
 mkdir -p "$HOME/.local/bin"
 ln -sf "$path/tmx" "$HOME/.local/bin/tmx"
 
