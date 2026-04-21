@@ -1,7 +1,6 @@
 return {
 	'neovim/nvim-lspconfig',
 	dependencies = {
-		'Saghen/blink.cmp',
 		'williamboman/mason.nvim',
 		{ 'antosha417/nvim-lsp-file-operations', config = true },
 		{ 'folke/neodev.nvim', opts = {} },
@@ -10,7 +9,7 @@ return {
 		local lspconfig = require('lspconfig')
 		local mason_lspconfig = require('mason-lspconfig')
 
-		local capabilities = require('blink.cmp').get_lsp_capabilities()
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 		local settings = {
 			pylsp = {
