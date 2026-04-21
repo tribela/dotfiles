@@ -9,13 +9,6 @@ return {
       "ModeMsg",
     }
 
-    vim.opt.list = true
-    vim.opt.listchars = {
-      tab = '┆ ',
-      trail = '•',
-      nbsp = '␣',
-    }
-
     ibl.setup {
       indent = {
         char = '┆',

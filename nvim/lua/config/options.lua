@@ -18,6 +18,11 @@ opt.signcolumn = 'yes'
 opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.tabstop = 2
+opt.listchars = {
+	tab = '┆ ',
+	trail = '•',
+	nbsp = '␣',
+}
 
 local set_spell = function()
   opt.spell = true
