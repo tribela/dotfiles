@@ -9,6 +9,22 @@ return {
 		local lspconfig = require('lspconfig')
 		local mason_lspconfig = require('mason-lspconfig')
 
+		vim.diagnostic.config({
+			virtual_text = true,
+			signs = true,
+			update_in_insert = false,
+			underline = true,
+			severity_sort = true,
+			float = {
+				focusable = false,
+				style = "minimal",
+				border = "rounded",
+				source = "always",
+				header = "",
+				prefix = "",
+			},
+		})
+
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 		local settings = {
