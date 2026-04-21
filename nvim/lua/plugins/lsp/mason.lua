@@ -36,7 +36,7 @@ return {
 			ensure_installed = {
 				'shellcheck',
 				'flake8',
-				'mypy',
+				-- 'mypy',
 				'pyright',
 				'clang-format',
 			},
