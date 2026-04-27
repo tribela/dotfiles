@@ -2,20 +2,12 @@ return {
 	{
 		-- Expand a/i key
 		'nvim-mini/mini.ai',
-		event = 'VeryLazy',
-		config = true,
-	},
-	{
-		'nvim-mini/mini.pairs',
-		event = 'InsertEnter',
-		config = true,
-	},
-	{
-		'nvim-mini/mini.surround',
+		event = { 'BufReadPost', 'BufNewFile' },
 		config = true,
 	},
 	{
 		'nvim-mini/mini.completion',
+		event = 'InsertEnter',
 		opts = {
 			process_dot = true,
 			fallback_action = function()
