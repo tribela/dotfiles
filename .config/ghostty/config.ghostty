@@ -1,0 +1,13 @@
+background-opacity = 0.65
+font-family = Comic Mono v2
+font-size = 16
+theme = Dark Pastel
+gtk-titlebar = false
+
+link-url = true
+mouse-scroll-multiplier = 1
+
+working-directory = home
+
+keybind = alt+shift+]=next_tab
+keybind = alt+shift+[=previous_tab
